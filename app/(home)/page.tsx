@@ -10,7 +10,6 @@ import ExpensesPerCategory from "./_components/expenses-per-category";
 import LastTransactions from "./_components/last-transactions";
 import { canUserAddTransaction } from "../_data/can-user-add-transaction";
 import AiReportButton from "./_components/ai-report-button";
-//import AiReportButton from "./_components/ai-report-button";
 
 interface HomeProps {
   searchParams: {
