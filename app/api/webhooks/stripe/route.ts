@@ -28,15 +28,14 @@ export const POST = async (request: Request) => {
         const { customer, lines } = event.data.object;
 
         // Acessar o metadata e subscription ID diretamente do line item
-        const lineItem = lines.data[0] as any;
+        const lineItem = lines.data[0] as Stripe.InvoiceLineItem;
         const clerkUserId = lineItem?.metadata?.clerk_user_id;
-        const subscriptionId = lineItem?.parent?.subscription_item_details?.subscription;
+        const subscriptionId = lineItem?.subscription;
 
         if (!clerkUserId) {
           return new NextResponse('User ID is required', { status: 400 });
         }
-        try {
-          await clerkClient().users.updateUserMetadata(clerkUserId, {
+        await clerkClient().users.updateUserMetadata(clerkUserId, {
             privateMetadata: {
               stripeCustomerId: customer,
               stripeSubscriptionId: subscriptionId,
@@ -44,10 +43,8 @@ export const POST = async (request: Request) => {
             publicMetadata: {
               subscriptionPlan: "premium",
             },
-          });
-        } catch (error) {
-          return new NextResponse('Internal Server Error', { status: 403 });
-        }
+        });
+        
         break;
       }
       case "customer.subscription.deleted": {

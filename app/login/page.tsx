@@ -1,4 +1,4 @@
-import { SignIn, SignInButton } from "@clerk/nextjs";
+import { SignInButton } from "@clerk/nextjs";
 import { Button } from "../_components/ui/button";
 import { LogInIcon } from "lucide-react";
 import { auth } from "@clerk/nextjs/server";

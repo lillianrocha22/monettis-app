@@ -1,6 +1,6 @@
 import { db } from "../_lib/prisma";
 import { DataTable } from "../_components/ui/data-table";
-import { TransactionColumns } from "./_columns";
+import { transactionColumns } from "./_columns";
 import AddTransactionButton from "../_components/add-transaction-button";
 import Navbar from "../_components/navbar";
 import { auth } from "@clerk/nextjs/server";
@@ -29,7 +29,7 @@ const TransactionsPage = async () => {
           <AddTransactionButton userCanAddTransaction={userCanAddTransaction} />
         </div>
         <ScrollArea>
-          <DataTable columns={TransactionColumns} data={transactions} />
+          <DataTable columns={transactionColumns} data={transactions} />
         </ScrollArea>
       </div>
     </>

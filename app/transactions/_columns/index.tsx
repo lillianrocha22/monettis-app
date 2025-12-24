@@ -1,36 +1,17 @@
-"use client"
+"use client";
 
-import { Transaction } from "@prisma/client"
-import { ColumnDef } from "@tanstack/react-table"
+import { Transaction } from "@prisma/client";
+import { ColumnDef } from "@tanstack/react-table";
 import TransactionTypeBadge from "../_components/type-badge";
 import { Button } from "@/app/_components/ui/button";
-import { Edit, TrashIcon } from "lucide-react";
-import { PencilIcon } from "lucide-react";
+import { TrashIcon } from "lucide-react";
+import {
+  TRANSACTION_CATEGORY_LABELS,
+  TRANSACTION_PAYMENT_METHOD_LABELS,
+} from "@/app/_constants/transactions";
 import EditTransactionButton from "../_components/edit-transaction-button";
 
-export const TRANSACTION_CATEGORY_LABELS = {
-  EDUCATION: "Educação",
-  ENTRETAINMENT: "Entretenimento",
-  FOOD: "Alimentação",
-  HEALTH: "Saúde",
-  HOUSING: "Moradia",
-  OTHER: "Outros",
-  SALARY: "Salário",
-  TRANSPORTATION: "Transporte",
-  UTILITY: "Utilidades",
-};
-
-export const TRANSACTION_PAYMENT_METHOD_LABELS = {
-  BANK_TRANSFER: "Transferência Bancária",
-  BANK_SLIP: "Boleto Bancário",
-  CASH: "Dinheiro",
-  CREDIT_CARD: "Cartão de Crédito",
-  DEBIT_CARD: "Cartão de Débito",
-  OTHER: "Outros",
-  PIX: "Pix",
-};
-
-export const TransactionColumns: ColumnDef<Transaction>[] = [
+export const transactionColumns: ColumnDef<Transaction>[] = [
   {
     accessorKey: "name",
     header: "Nome",
@@ -42,7 +23,7 @@ export const TransactionColumns: ColumnDef<Transaction>[] = [
       <TransactionTypeBadge transaction={transaction} />
     ),
   },
-{
+  {
     accessorKey: "category",
     header: "Categoria",
     cell: ({ row: { original: transaction } }) =>
@@ -74,7 +55,7 @@ export const TransactionColumns: ColumnDef<Transaction>[] = [
       }).format(Number(transaction.amount)),
   },
   {
-    accessorKey: "actions",
+    id: "actions",
     header: "Ações",
     cell: ({ row: { original: transaction } }) => {
       return (
@@ -87,4 +68,4 @@ export const TransactionColumns: ColumnDef<Transaction>[] = [
       );
     },
   },
-]
+];

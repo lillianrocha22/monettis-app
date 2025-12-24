@@ -94,7 +94,7 @@ const TransactionsPieChart = ({
           <PercentageItem
             icon={<PiggyBankIcon size={16} />}
             title="Investido"
-            value={typesPercentage[TransactionType.INVESTMENT]}
+            value={typesPercentage[TransactionType.INVESTIMENT]}
           />
         </div>
       </CardContent>
