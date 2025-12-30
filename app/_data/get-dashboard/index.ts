@@ -54,12 +54,12 @@ export const getDashboard = async (month: string, year: string) => {
     {
       [TransactionType.DEPOSIT]: 0,
       [TransactionType.EXPENSE]: 0,
-      [TransactionType.INVESTIMENT]: 0,
+      [TransactionType.INVESTMENT]: 0,
     } as Record<TransactionType, number>,
   );
 
   const depositsTotal = totalsMap[TransactionType.DEPOSIT] || 0;
-  const investmentsTotal = totalsMap[TransactionType.INVESTIMENT] || 0;
+  const investmentsTotal = totalsMap[TransactionType.INVESTMENT] || 0;
   const expensesTotal = totalsMap[TransactionType.EXPENSE] || 0;
   const balance = depositsTotal - investmentsTotal - expensesTotal;
   const transactionsTotal =
@@ -75,7 +75,7 @@ export const getDashboard = async (month: string, year: string) => {
   const typesPercentage: TransactionPercentagePerType = {
     [TransactionType.DEPOSIT]: safePercentage(depositsTotal, transactionsTotal),
     [TransactionType.EXPENSE]: safePercentage(expensesTotal, transactionsTotal),
-    [TransactionType.INVESTIMENT]: safePercentage(
+    [TransactionType.INVESTMENT]: safePercentage(
       investmentsTotal,
       transactionsTotal,
     ),
