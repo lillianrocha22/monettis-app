@@ -41,8 +41,6 @@ export const POST = async (request: Request) => {
     );
   }
 
-  console.log("Processing webhook event:", event.type);
-
   try {
     switch (event.type) {
       case "invoice.paid": {
@@ -104,7 +102,6 @@ export const POST = async (request: Request) => {
         break;
       }
       default: {
-        console.log(`Unhandled event type: ${event.type}`);
         break;
       }
     }

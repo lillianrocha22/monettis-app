@@ -31,7 +31,6 @@ const AiReportButton = ({ month, year, hasPremiumPlan }: AiReportButtonProps) =>
     try {
       setReportIsLoading(true);
       const aiReport = await generateAiReport({ month, year });
-      console.log({ aiReport });
       setReport(aiReport);
     } catch (error) {
       console.error(error);
