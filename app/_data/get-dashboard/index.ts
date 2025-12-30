@@ -17,73 +17,74 @@ export const getDashboard = async (month: string, year: string) => {
       lt: endOfMonth(referenceDate),
     },
   };
-  const depositsTotal = Number(
-    (
-      await db.transaction.aggregate({
-        where: { ...where, type: "DEPOSIT" },
-        _sum: { amount: true },
-      })
-    )?._sum?.amount,
-  );
-  const investmentsTotal = Number(
-    (
-      await db.transaction.aggregate({
-        where: { ...where, type: "INVESTIMENT" },
-        _sum: { amount: true },
-      })
-    )?._sum?.amount,
-  );
-  const expensesTotal = Number(
-    (
-      await db.transaction.aggregate({
-        where: { ...where, type: "EXPENSE" },
-        _sum: { amount: true },
-      })
-    )?._sum?.amount,
-  );
-  const balance = depositsTotal - investmentsTotal - expensesTotal;
-  const transactionsTotal = Number(
-    (
-      await db.transaction.aggregate({
+  // Execute 3 queries in parallel using $transaction (reduced from 6 sequential queries)
+  const [transactionsByType, expensesByCategory, lastTransactions] =
+    await db.$transaction([
+      // Query 1: GroupBy type to get totals for each transaction type
+      db.transaction.groupBy({
+        by: ["type"],
         where,
         _sum: { amount: true },
-      })
-    )._sum.amount,
+        orderBy: { type: "asc" },
+      }),
+      // Query 2: GroupBy category for expense breakdown
+      db.transaction.groupBy({
+        by: ["category"],
+        where: {
+          ...where,
+          type: TransactionType.EXPENSE,
+        },
+        _sum: { amount: true },
+        orderBy: { category: "asc" },
+      }),
+      // Query 3: Last 15 transactions
+      db.transaction.findMany({
+        where,
+        orderBy: { date: "desc" },
+        take: 15,
+      }),
+    ]);
+
+  // Extract totals from transactionsByType groupBy result
+  const totalsMap = transactionsByType.reduce(
+    (acc, item) => {
+      acc[item.type] = Number(item._sum?.amount || 0);
+      return acc;
+    },
+    {
+      [TransactionType.DEPOSIT]: 0,
+      [TransactionType.EXPENSE]: 0,
+      [TransactionType.INVESTIMENT]: 0,
+    } as Record<TransactionType, number>,
   );
+
+  const depositsTotal = totalsMap[TransactionType.DEPOSIT];
+  const investmentsTotal = totalsMap[TransactionType.INVESTIMENT];
+  const expensesTotal = totalsMap[TransactionType.EXPENSE];
+  const balance = depositsTotal - investmentsTotal - expensesTotal;
+  const transactionsTotal =
+    depositsTotal + investmentsTotal + expensesTotal;
+
   const typesPercentage: TransactionPercentagePerType = {
     [TransactionType.DEPOSIT]: Math.round(
-      (Number(depositsTotal || 0) / Number(transactionsTotal)) * 100,
+      (depositsTotal / (transactionsTotal || 1)) * 100,
     ),
     [TransactionType.EXPENSE]: Math.round(
-      (Number(expensesTotal || 0) / Number(transactionsTotal)) * 100,
+      (expensesTotal / (transactionsTotal || 1)) * 100,
     ),
     [TransactionType.INVESTIMENT]: Math.round(
-      (Number(investmentsTotal || 0) / Number(transactionsTotal)) * 100,
+      (investmentsTotal / (transactionsTotal || 1)) * 100,
     ),
   };
-  const totalExpensePerCategory: TotalExpensePerCategory[] = (
-    await db.transaction.groupBy({
-      by: ["category"],
-      where: {
-        ...where,
-        type: TransactionType.EXPENSE,
-      },
-      _sum: {
-        amount: true,
-      },
-    })
-  ).map((category) => ({
-    category: category.category,
-    totalAmount: Number(category._sum.amount),
-    percentageOfTotal: Math.round(
-      (Number(category._sum.amount) / Number(expensesTotal)) * 100,
-    ),
-  }));
-  const lastTransactions = await db.transaction.findMany({
-    where,
-    orderBy: { date: "desc" },
-    take: 15,
-  });
+
+  const totalExpensePerCategory: TotalExpensePerCategory[] =
+    expensesByCategory.map((category) => ({
+      category: category.category,
+      totalAmount: Number(category._sum?.amount || 0),
+      percentageOfTotal: Math.round(
+        (Number(category._sum?.amount || 0) / (expensesTotal || 1)) * 100,
+      ),
+    }));
   return {
     balance,
     depositsTotal,
