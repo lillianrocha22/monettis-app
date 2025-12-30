@@ -4,6 +4,7 @@ import { UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ThemeToggle } from "./theme-toggle";
 
 
 const Navbar = () => {
@@ -45,7 +46,10 @@ const Navbar = () => {
                 </Link>
             </div>
             {/* DIREITA */}
-            <UserButton showName />
+            <div className="flex items-center gap-3">
+                <ThemeToggle />
+                <UserButton showName />
+            </div>
             
         </nav>
             );
