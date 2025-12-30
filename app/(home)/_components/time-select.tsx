@@ -28,8 +28,14 @@ const TimeSelect = () => {
   const { push } = useRouter();
   const searchParams = useSearchParams();
   const month = searchParams.get("month");
-  const handleMonthChange = (month: string) => {
-    push(`/?month=${month}`);
+  const year = searchParams.get("year");
+  const handleMonthChange = (newMonth: string) => {
+    const params = new URLSearchParams();
+    params.set("month", newMonth);
+    if (year) {
+      params.set("year", year);
+    }
+    push(`/?${params.toString()}`);
   };
   return (
     <Select
