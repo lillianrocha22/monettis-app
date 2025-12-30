@@ -58,33 +58,38 @@ export const getDashboard = async (month: string, year: string) => {
     } as Record<TransactionType, number>,
   );
 
-  const depositsTotal = totalsMap[TransactionType.DEPOSIT];
-  const investmentsTotal = totalsMap[TransactionType.INVESTIMENT];
-  const expensesTotal = totalsMap[TransactionType.EXPENSE];
+  const depositsTotal = totalsMap[TransactionType.DEPOSIT] || 0;
+  const investmentsTotal = totalsMap[TransactionType.INVESTIMENT] || 0;
+  const expensesTotal = totalsMap[TransactionType.EXPENSE] || 0;
   const balance = depositsTotal - investmentsTotal - expensesTotal;
   const transactionsTotal =
     depositsTotal + investmentsTotal + expensesTotal;
 
+  // Helper function to safely calculate percentage and avoid NaN
+  const safePercentage = (value: number, total: number): number => {
+    if (!total || total === 0) return 0;
+    const percentage = Math.round((value / total) * 100);
+    return isNaN(percentage) ? 0 : percentage;
+  };
+
   const typesPercentage: TransactionPercentagePerType = {
-    [TransactionType.DEPOSIT]: Math.round(
-      (depositsTotal / (transactionsTotal || 1)) * 100,
-    ),
-    [TransactionType.EXPENSE]: Math.round(
-      (expensesTotal / (transactionsTotal || 1)) * 100,
-    ),
-    [TransactionType.INVESTIMENT]: Math.round(
-      (investmentsTotal / (transactionsTotal || 1)) * 100,
+    [TransactionType.DEPOSIT]: safePercentage(depositsTotal, transactionsTotal),
+    [TransactionType.EXPENSE]: safePercentage(expensesTotal, transactionsTotal),
+    [TransactionType.INVESTIMENT]: safePercentage(
+      investmentsTotal,
+      transactionsTotal,
     ),
   };
 
   const totalExpensePerCategory: TotalExpensePerCategory[] =
-    expensesByCategory.map((category) => ({
-      category: category.category,
-      totalAmount: Number(category._sum?.amount || 0),
-      percentageOfTotal: Math.round(
-        (Number(category._sum?.amount || 0) / (expensesTotal || 1)) * 100,
-      ),
-    }));
+    expensesByCategory.map((category) => {
+      const amount = Number(category._sum?.amount || 0);
+      return {
+        category: category.category,
+        totalAmount: amount,
+        percentageOfTotal: safePercentage(amount, expensesTotal),
+      };
+    });
   return {
     balance,
     depositsTotal,
