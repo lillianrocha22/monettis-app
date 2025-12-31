@@ -9,12 +9,13 @@ export const getDashboard = async (month: string, year: string) => {
   if (!userId) {
     throw new Error("Unauthorized");
   }
-  const referenceDate = new Date(`${year}-${month}-01`);
+  // Criar data em horário local (não UTC) para evitar problemas de timezone
+  const referenceDate = new Date(Number(year), Number(month) - 1, 1);
   const where = {
     userId,
     date: {
       gte: startOfMonth(referenceDate),
-      lt: endOfMonth(referenceDate),
+      lte: endOfMonth(referenceDate),
     },
   };
   // Execute 3 queries in parallel using $transaction (reduced from 6 sequential queries)
