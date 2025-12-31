@@ -19,7 +19,7 @@ const LastTransactions = ({ lastTransactions }: LastTransactionsProps) => {
     if (transaction.type === TransactionType.DEPOSIT) {
       return "text-primary";
     }
-    return "text-white";
+    return "text-muted-foreground";
   };
   const getAmountPrefix = (transaction: Transaction) => {
     if (transaction.type === TransactionType.DEPOSIT) {
@@ -42,7 +42,7 @@ const LastTransactions = ({ lastTransactions }: LastTransactionsProps) => {
             className="flex items-center justify-between"
           >
             <div className="flex items-center gap-3">
-              <div className="rounded-lg bg-white bg-opacity-[3%] p-3 text-white">
+              <div className="rounded-lg bg-white bg-opacity-[3%] p-3 text-muted-foreground">
                 <Image
                   src={`/${TRANSACTION_PAYMENT_METHOD_ICONS[transaction.paymentMethod]}`}
                   height={20}
