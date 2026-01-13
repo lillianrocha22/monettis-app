@@ -85,7 +85,7 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="system"
           enableSystem
-          storageKey="monettis-theme"
+          storageKey="monettis-theme-v2"
           disableTransitionOnChange
         >
           <ClerkThemeProvider>
