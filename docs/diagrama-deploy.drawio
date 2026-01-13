@@ -1,0 +1,377 @@
+<mxfile host="app.diagrams.net" agent="Claude Code" version="24.0.0">
+  <diagram name="Deploy - Infraestrutura" id="deploy-main">
+    <mxGraphModel dx="2400" dy="1600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3200" pageHeight="2400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- TÍTULO -->
+        <mxCell id="title" value="Diagrama de Deploy/Infraestrutura - Monettis App&#xa;Fase 1 (Atual) vs Fase 2 (Microsserviços)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="800" y="20" width="1000" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- LEGENDA -->
+        <mxCell id="legend-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="520" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" value="LEGENDA - TIERS E INFRAESTRUTURA" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="110" width="500" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-t1" value="🟦 TIER 1 - R$ 14,00/mês - Premium Individual" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="150" width="480" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-t2" value="🟩 TIER 2 - R$ 23,90/mês - Família Plus" style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="180" width="480" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-t3" value="🟧 TIER 3 - R$ 45,90/mês - Business Enterprise" style="text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="210" width="480" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-external" value="🔴 Serviços Externos (SaaS): Clerk, Stripe, OpenAI, WhatsApp" style="text;html=1;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="240" width="480" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-cloud" value="☁️ Cloud: Vercel (Edge), Neon (PostgreSQL), AWS/GCP (Fase 2)" style="text;html=1;strokeColor=#9673a6;fillColor=#e1d5e7;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="270" width="480" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-phases" value="Fase 1: Monólito Next.js | Fase 2: Microsserviços Kubernetes" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="60" y="305" width="480" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ========== FASE 1: ARQUITETURA ATUAL ========== -->
+
+        <mxCell id="phase1-container" value="FASE 1: Arquitetura Atual (Monólito Modular Next.js 14)" style="swimlane;horizontal=1;startSize=40;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="40" y="380" width="1400" height="700" as="geometry" />
+        </mxCell>
+
+        <!-- Usuários -->
+        <mxCell id="p1-users" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://cdn-icons-png.flaticon.com/512/747/747376.png;" vertex="1" parent="phase1-container">
+          <mxGeometry x="60" y="80" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p1-users-label" value="Usuários&#xa;(Browser/Mobile)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="phase1-container">
+          <mxGeometry x="35" y="145" width="110" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- CDN/Edge -->
+        <mxCell id="p1-cdn" value="Vercel Edge Network&#xa;(CDN Global)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=12;" vertex="1" parent="phase1-container">
+          <mxGeometry x="200" y="90" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Vercel -->
+        <mxCell id="p1-vercel-container" value="Vercel Platform" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;fontStyle=1;fontSize=14;" vertex="1" parent="phase1-container">
+          <mxGeometry x="200" y="180" width="540" height="280" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1-nextjs" value="Next.js 14 App&#xa;(Server Components + Client Components)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" vertex="1" parent="phase1-container">
+          <mxGeometry x="230" y="220" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1-serveractions" value="Server Actions&#xa;('use server')" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="phase1-container">
+          <mxGeometry x="230" y="300" width="90" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1-datalayer" value="Data Layer&#xa;(app/_data)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="phase1-container">
+          <mxGeometry x="340" y="300" width="90" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1-apiroutes" value="API Routes&#xa;(Webhooks)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="phase1-container">
+          <mxGeometry x="230" y="370" width="90" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1-middleware" value="Middleware&#xa;(Auth Check)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="phase1-container">
+          <mxGeometry x="340" y="370" width="90" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1-prisma" value="Prisma ORM&#xa;6.19.0" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="phase1-container">
+          <mxGeometry x="490" y="220" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1-modules" value="Módulos:&#xa;• Dashboard&#xa;• Transactions&#xa;• Subscription&#xa;• AI Reports" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;fontSize=10;" vertex="1" parent="phase1-container">
+          <mxGeometry x="490" y="290" width="120" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1-env" value="Environment:&#xa;• NODE_ENV=production&#xa;• Edge Runtime&#xa;• Serverless Functions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;fontSize=9;" vertex="1" parent="phase1-container">
+          <mxGeometry x="620" y="220" width="110" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Neon Database -->
+        <mxCell id="p1-neon" value="Neon PostgreSQL 16&#xa;(Serverless)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=12;" vertex="1" parent="phase1-container">
+          <mxGeometry x="800" y="220" width="140" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1-neon-features" value="• Auto-scaling&#xa;• Branching (dev/prod)&#xa;• Connection pooling&#xa;• Point-in-time recovery" style="text;html=1;strokeColor=#9673a6;fillColor=#e1d5e7;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=9;" vertex="1" parent="phase1-container">
+          <mxGeometry x="800" y="310" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Serviços Externos -->
+        <mxCell id="p1-external-label" value="Serviços Externos (SaaS)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="phase1-container">
+          <mxGeometry x="1000" y="60" width="180" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1-clerk" value="Clerk&#xa;Authentication" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=11;" vertex="1" parent="phase1-container">
+          <mxGeometry x="1000" y="100" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="p1-clerk-detail" value="• User management&#xa;• Session handling&#xa;• JWT tokens&#xa;• Metadata (tier)" style="text;html=1;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=8;" vertex="1" parent="phase1-container">
+          <mxGeometry x="1000" y="155" width="110" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1-stripe" value="Stripe&#xa;Payments" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=11;" vertex="1" parent="phase1-container">
+          <mxGeometry x="1130" y="100" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="p1-stripe-detail" value="• Subscriptions&#xa;• Checkout&#xa;• Webhooks&#xa;• Customer portal" style="text;html=1;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=8;" vertex="1" parent="phase1-container">
+          <mxGeometry x="1130" y="155" width="110" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1-openai" value="OpenAI&#xa;GPT-4o-mini" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=11;" vertex="1" parent="phase1-container">
+          <mxGeometry x="1260" y="100" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="p1-openai-detail" value="• AI Reports&#xa;• Financial analysis&#xa;• Suggestions&#xa;• Markdown output" style="text;html=1;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=8;" vertex="1" parent="phase1-container">
+          <mxGeometry x="1260" y="155" width="110" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1-whatsapp" value="WhatsApp&#xa;Business API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=11;" vertex="1" parent="phase1-container">
+          <mxGeometry x="1000" y="240" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="p1-whatsapp-detail" value="• Notificações&#xa;• Alertas de contas&#xa;• Lembretes&#xa;• Templates" style="text;html=1;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=8;" vertex="1" parent="phase1-container">
+          <mxGeometry x="1000" y="295" width="110" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Fluxo de dados Fase 1 -->
+        <mxCell id="p1-flow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#6c8ebf;" edge="1" parent="phase1-container" source="p1-users" target="p1-cdn">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1-flow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#6c8ebf;" edge="1" parent="phase1-container" source="p1-cdn" target="p1-vercel-container">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1-flow3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#d6b656;" edge="1" parent="phase1-container" source="p1-prisma" target="p1-neon">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1-flow4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;strokeColor=#b85450;dashed=1;" edge="1" parent="phase1-container" source="p1-vercel-container" target="p1-clerk">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1-flow5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;strokeColor=#b85450;dashed=1;" edge="1" parent="phase1-container" source="p1-vercel-container" target="p1-stripe">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1-flow6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;strokeColor=#b85450;dashed=1;" edge="1" parent="phase1-container" source="p1-vercel-container" target="p1-openai">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Stack Fase 1 -->
+        <mxCell id="p1-stack" value="STACK FASE 1:&#xa;&#xa;• Framework: Next.js 14.2.16&#xa;• Runtime: Node.js 20 (Edge)&#xa;• DB: PostgreSQL 16 (Neon)&#xa;• ORM: Prisma 6.19.0&#xa;• Auth: Clerk 5.7.5&#xa;• Payments: Stripe 17.3.1&#xa;• AI: OpenAI 6.6.15&#xa;• UI: shadcn/ui + Tailwind 3.4.1&#xa;• Deploy: Vercel (Pro)&#xa;• Monitoring: Vercel Analytics" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="phase1-container">
+          <mxGeometry x="200" y="500" width="280" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1-scaling" value="ESCALABILIDADE:&#xa;&#xa;• Vercel: Auto-scaling serverless&#xa;• Neon: Compute auto-scaling&#xa;• Edge: Distribuição global&#xa;• Cache: ISR + Edge Cache&#xa;• Limite: ~100k req/mês (Pro)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="phase1-container">
+          <mxGeometry x="520" y="500" width="240" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- ========== FASE 2: ARQUITETURA FUTURA ========== -->
+
+        <mxCell id="phase2-container" value="FASE 2: Arquitetura Futura (Microsserviços - Planejado)" style="swimlane;horizontal=1;startSize=40;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="380" width="1680" height="700" as="geometry" />
+        </mxCell>
+
+        <!-- API Gateway -->
+        <mxCell id="p2-users" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://cdn-icons-png.flaticon.com/512/747/747376.png;" vertex="1" parent="phase2-container">
+          <mxGeometry x="60" y="80" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-users-label" value="Usuários&#xa;(Web/Mobile/API)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="phase2-container">
+          <mxGeometry x="35" y="145" width="110" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p2-lb" value="Load Balancer&#xa;(Cloud LB)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=11;" vertex="1" parent="phase2-container">
+          <mxGeometry x="180" y="90" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p2-gateway" value="API Gateway&#xa;(Kong/AWS API GW)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=11;" vertex="1" parent="phase2-container">
+          <mxGeometry x="180" y="170" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Kubernetes Cluster -->
+        <mxCell id="p2-k8s" value="Kubernetes Cluster (EKS/GKE)" style="swimlane;horizontal=1;startSize=30;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=12;" vertex="1" parent="phase2-container">
+          <mxGeometry x="340" y="60" width="900" height="350" as="geometry" />
+        </mxCell>
+
+        <!-- Namespace: Core -->
+        <mxCell id="p2-ns-core" value="Namespace: monettis-core" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=top;fontStyle=1;fontSize=10;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="20" y="40" width="420" height="140" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p2-svc-auth" value="Auth Service&#xa;(Clerk Proxy)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=9;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="35" y="70" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-svc-trans" value="Transaction&#xa;Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=9;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="140" y="70" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-svc-dashboard" value="Dashboard&#xa;Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=9;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="245" y="70" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-svc-sub" value="Subscription&#xa;Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=9;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="35" y="125" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-svc-ai" value="AI Report&#xa;Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=9;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="140" y="125" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-svc-notify" value="Notification&#xa;Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=9;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="245" y="125" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-svc-import" value="Import&#xa;Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=9;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="350" y="70" width="80" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- Namespace: Family (T2) -->
+        <mxCell id="p2-ns-family" value="Namespace: monettis-family (T2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;fontStyle=1;fontSize=10;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="460" y="40" width="200" height="140" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p2-svc-family" value="Family&#xa;Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="475" y="70" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-svc-allowance" value="Allowance&#xa;Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="565" y="70" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-svc-split" value="Expense Split&#xa;Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="475" y="125" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-svc-parental" value="Parental&#xa;Control Svc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="565" y="125" width="80" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- Namespace: Business (T3) -->
+        <mxCell id="p2-ns-business" value="Namespace: monettis-business (T3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;verticalAlign=top;fontStyle=1;fontSize=10;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="680" y="40" width="200" height="140" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p2-svc-business" value="Business&#xa;Profile Svc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="695" y="70" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-svc-invoice" value="Invoice&#xa;Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="785" y="70" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-svc-tax" value="Tax&#xa;Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="695" y="125" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-svc-dre" value="DRE&#xa;Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="785" y="125" width="80" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- Infraestrutura K8s -->
+        <mxCell id="p2-infra" value="Infra Services" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;verticalAlign=top;fontStyle=1;fontSize=10;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="20" y="200" width="860" height="130" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p2-redis" value="Redis&#xa;(Cache/Queue)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="40" y="230" width="100" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-kafka" value="Kafka/SQS&#xa;(Event Bus)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="160" y="230" width="100" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-prometheus" value="Prometheus&#xa;(Metrics)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="280" y="230" width="100" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-grafana" value="Grafana&#xa;(Dashboards)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="400" y="230" width="100" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-elk" value="ELK Stack&#xa;(Logs)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="520" y="230" width="100" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-vault" value="Vault&#xa;(Secrets)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="640" y="230" width="100" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-istio" value="Istio&#xa;(Service Mesh)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;" vertex="1" parent="p2-k8s">
+          <mxGeometry x="760" y="230" width="100" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- Databases -->
+        <mxCell id="p2-db-label" value="Databases (Managed)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="phase2-container">
+          <mxGeometry x="1270" y="60" width="160" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p2-pg-core" value="PostgreSQL&#xa;(Core DB)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="phase2-container">
+          <mxGeometry x="1270" y="100" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-pg-family" value="PostgreSQL&#xa;(Family DB)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="phase2-container">
+          <mxGeometry x="1390" y="100" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-pg-business" value="PostgreSQL&#xa;(Business DB)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="phase2-container">
+          <mxGeometry x="1510" y="100" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p2-mongo" value="MongoDB&#xa;(Logs/Analytics)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" vertex="1" parent="phase2-container">
+          <mxGeometry x="1270" y="180" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-elastic" value="Elasticsearch&#xa;(Search)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" vertex="1" parent="phase2-container">
+          <mxGeometry x="1390" y="180" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-s3" value="S3/Blob&#xa;(Files)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" vertex="1" parent="phase2-container">
+          <mxGeometry x="1510" y="180" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Serviços Externos Fase 2 -->
+        <mxCell id="p2-external-label" value="Serviços Externos" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="phase2-container">
+          <mxGeometry x="1270" y="260" width="160" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p2-clerk" value="Clerk" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="phase2-container">
+          <mxGeometry x="1270" y="295" width="70" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-stripe" value="Stripe" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="phase2-container">
+          <mxGeometry x="1350" y="295" width="70" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-openai" value="OpenAI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="phase2-container">
+          <mxGeometry x="1430" y="295" width="70" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-whatsapp" value="WhatsApp" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="phase2-container">
+          <mxGeometry x="1510" y="295" width="70" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-nfse" value="NFSe API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="phase2-container">
+          <mxGeometry x="1270" y="340" width="70" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-openbanking" value="Open Banking" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="phase2-container">
+          <mxGeometry x="1350" y="340" width="90" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Frontend -->
+        <mxCell id="p2-frontend-label" value="Frontend (CDN)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="phase2-container">
+          <mxGeometry x="60" y="260" width="140" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p2-web" value="Web App&#xa;(Next.js/React)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="phase2-container">
+          <mxGeometry x="60" y="295" width="100" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-mobile" value="Mobile App&#xa;(React Native)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="phase2-container">
+          <mxGeometry x="180" y="295" width="100" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- Fluxo Fase 2 -->
+        <mxCell id="p2-flow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#6c8ebf;" edge="1" parent="phase2-container" source="p2-users" target="p2-lb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-flow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#6c8ebf;" edge="1" parent="phase2-container" source="p2-lb" target="p2-gateway">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-flow3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#6c8ebf;" edge="1" parent="phase2-container" source="p2-gateway" target="p2-k8s">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Stack Fase 2 -->
+        <mxCell id="p2-stack" value="STACK FASE 2:&#xa;&#xa;• Services: Go/Node.js/Python&#xa;• Orchestration: Kubernetes (EKS/GKE)&#xa;• API Gateway: Kong/AWS API Gateway&#xa;• Service Mesh: Istio&#xa;• Event Bus: Kafka/SQS&#xa;• Cache: Redis Cluster&#xa;• Search: Elasticsearch&#xa;• Monitoring: Prometheus + Grafana&#xa;• Logs: ELK Stack&#xa;• Secrets: HashiCorp Vault&#xa;• CI/CD: GitHub Actions + ArgoCD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="phase2-container">
+          <mxGeometry x="340" y="450" width="320" height="200" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p2-scaling" value="ESCALABILIDADE:&#xa;&#xa;• HPA: Auto-scaling horizontal pods&#xa;• Multi-region: GKE/EKS multi-az&#xa;• DB: Read replicas por região&#xa;• CDN: CloudFront/Cloudflare&#xa;• Rate Limiting: Kong plugins&#xa;• Circuit Breaker: Istio&#xa;• Limite: Ilimitado (pay-as-you-go)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="phase2-container">
+          <mxGeometry x="700" y="450" width="280" height="150" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p2-migration" value="MIGRAÇÃO FASE 1 → FASE 2:&#xa;&#xa;1. Strangler Fig Pattern&#xa;2. Feature flags por módulo&#xa;3. Database per service&#xa;4. Event sourcing gradual&#xa;5. Canary deployments" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="phase2-container">
+          <mxGeometry x="1020" y="450" width="260" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- Notas gerais -->
+        <mxCell id="notes" value="NOTAS:&#xa;&#xa;• Fase 1 (Atual): Monólito modular em Next.js 14 hospedado na Vercel com Neon PostgreSQL&#xa;• Fase 2 (Futuro): Arquitetura de microsserviços em Kubernetes com databases dedicados por domínio&#xa;• Migração gradual usando Strangler Fig Pattern para minimizar riscos&#xa;• Cores: 🟦 Core (T1), 🟩 Family (T2), 🟧 Business (T3), 🔴 External SaaS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=10;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="40" y="1120" width="900" height="100" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

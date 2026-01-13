@@ -1,0 +1,676 @@
+<mxfile host="app.diagrams.net" agent="Claude Code" version="1.0">
+  <diagram name="Diagrama de Classes - Monettis App" id="monettis-class-diagram">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="2000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title-1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1" value="Monettis App - Diagrama de Classes" vertex="1">
+          <mxGeometry x="600" y="20" width="1000" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="subtitle-1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=0;fontColor=#666666" value="Arquitetura Full-Stack Next.js 14 - Camadas de Aplicação e Classes de Domínio" vertex="1">
+          <mxGeometry x="600" y="60" width="1000" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ===== DOMAIN LAYER ===== -->
+        <mxCell id="layer-domain" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=3;fontSize=14;" value="CAMADA DE DOMÍNIO (Domain Layer)" vertex="1">
+          <mxGeometry x="50" y="120" width="1000" height="650" as="geometry" />
+        </mxCell>
+
+        <!-- Transaction Class -->
+        <mxCell id="class-transaction" parent="layer-domain" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" value="Transaction" vertex="1">
+          <mxGeometry x="30" y="50" width="280" height="380" as="geometry" />
+        </mxCell>
+
+        <mxCell id="transaction-separator-1" parent="class-transaction" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#6c8ebf;" vertex="1">
+          <mxGeometry y="30" width="280" height="8" as="geometry" />
+        </mxCell>
+
+        <mxCell id="transaction-attr-1" parent="class-transaction" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- id: string" vertex="1">
+          <mxGeometry y="38" width="280" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="transaction-attr-2" parent="class-transaction" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- name: string" vertex="1">
+          <mxGeometry y="64" width="280" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="transaction-attr-3" parent="class-transaction" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- type: TransactionType" vertex="1">
+          <mxGeometry y="90" width="280" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="transaction-attr-4" parent="class-transaction" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- amount: Decimal" vertex="1">
+          <mxGeometry y="116" width="280" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="transaction-attr-5" parent="class-transaction" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- category: TransactionCategory" vertex="1">
+          <mxGeometry y="142" width="280" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="transaction-attr-6" parent="class-transaction" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- paymentMethod: TransactionPaymentMethod" vertex="1">
+          <mxGeometry y="168" width="280" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="transaction-attr-7" parent="class-transaction" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- date: Date" vertex="1">
+          <mxGeometry y="194" width="280" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="transaction-attr-8" parent="class-transaction" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- createdAt: Date" vertex="1">
+          <mxGeometry y="220" width="280" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="transaction-attr-9" parent="class-transaction" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- updatedAt: Date" vertex="1">
+          <mxGeometry y="246" width="280" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="transaction-attr-10" parent="class-transaction" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- userId: string" vertex="1">
+          <mxGeometry y="272" width="280" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="transaction-separator-2" parent="class-transaction" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#6c8ebf;" vertex="1">
+          <mxGeometry y="298" width="280" height="8" as="geometry" />
+        </mxCell>
+
+        <mxCell id="transaction-method-1" parent="class-transaction" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ getId(): string" vertex="1">
+          <mxGeometry y="306" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="transaction-method-2" parent="class-transaction" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ getAmount(): Decimal" vertex="1">
+          <mxGeometry y="330" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="transaction-method-3" parent="class-transaction" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ belongsToUser(userId: string): boolean" vertex="1">
+          <mxGeometry y="354" width="280" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- Enums -->
+        <mxCell id="enum-type-class" parent="layer-domain" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" value="«enum» TransactionType" vertex="1">
+          <mxGeometry x="350" y="50" width="200" height="130" as="geometry" />
+        </mxCell>
+
+        <mxCell id="enum-type-separator" parent="enum-type-class" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#b85450;" vertex="1">
+          <mxGeometry y="30" width="200" height="8" as="geometry" />
+        </mxCell>
+
+        <mxCell id="enum-type-val1" parent="enum-type-class" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="  DEPOSIT" vertex="1">
+          <mxGeometry y="38" width="200" height="28" as="geometry" />
+        </mxCell>
+
+        <mxCell id="enum-type-val2" parent="enum-type-class" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="  EXPENSE" vertex="1">
+          <mxGeometry y="66" width="200" height="28" as="geometry" />
+        </mxCell>
+
+        <mxCell id="enum-type-val3" parent="enum-type-class" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="  INVESTMENT" vertex="1">
+          <mxGeometry y="94" width="200" height="28" as="geometry" />
+        </mxCell>
+
+        <mxCell id="enum-category-class" parent="layer-domain" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" value="«enum» TransactionCategory" vertex="1">
+          <mxGeometry x="590" y="50" width="190" height="300" as="geometry" />
+        </mxCell>
+
+        <mxCell id="enum-cat-separator" parent="enum-category-class" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#82b366;" vertex="1">
+          <mxGeometry y="30" width="190" height="8" as="geometry" />
+        </mxCell>
+
+        <mxCell id="enum-cat-val1" parent="enum-category-class" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="  HOUSING" vertex="1">
+          <mxGeometry y="38" width="190" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="enum-cat-val2" parent="enum-category-class" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="  TRANSPORTATION" vertex="1">
+          <mxGeometry y="64" width="190" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="enum-cat-val3" parent="enum-category-class" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="  FOOD" vertex="1">
+          <mxGeometry y="90" width="190" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="enum-cat-val4" parent="enum-category-class" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="  ENTERTAINMENT" vertex="1">
+          <mxGeometry y="116" width="190" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="enum-cat-val5" parent="enum-category-class" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="  HEALTH" vertex="1">
+          <mxGeometry y="142" width="190" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="enum-cat-val6" parent="enum-category-class" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="  UTILITY" vertex="1">
+          <mxGeometry y="168" width="190" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="enum-cat-val7" parent="enum-category-class" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="  SALARY" vertex="1">
+          <mxGeometry y="194" width="190" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="enum-cat-val8" parent="enum-category-class" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="  EDUCATION" vertex="1">
+          <mxGeometry y="220" width="190" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="enum-cat-val9" parent="enum-category-class" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="  OTHER" vertex="1">
+          <mxGeometry y="246" width="190" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="enum-payment-class" parent="layer-domain" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" value="«enum» TransactionPaymentMethod" vertex="1">
+          <mxGeometry x="810" y="50" width="160" height="250" as="geometry" />
+        </mxCell>
+
+        <mxCell id="enum-pay-separator" parent="enum-payment-class" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#9673a6;" vertex="1">
+          <mxGeometry y="30" width="160" height="8" as="geometry" />
+        </mxCell>
+
+        <mxCell id="enum-pay-val1" parent="enum-payment-class" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="  CREDIT_CARD" vertex="1">
+          <mxGeometry y="38" width="160" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="enum-pay-val2" parent="enum-payment-class" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="  DEBIT_CARD" vertex="1">
+          <mxGeometry y="64" width="160" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="enum-pay-val3" parent="enum-payment-class" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="  BANK_TRANSFER" vertex="1">
+          <mxGeometry y="90" width="160" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="enum-pay-val4" parent="enum-payment-class" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="  BANK_SLIP" vertex="1">
+          <mxGeometry y="116" width="160" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="enum-pay-val5" parent="enum-payment-class" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="  CASH" vertex="1">
+          <mxGeometry y="142" width="160" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="enum-pay-val6" parent="enum-payment-class" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="  PIX" vertex="1">
+          <mxGeometry y="168" width="160" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="enum-pay-val7" parent="enum-payment-class" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="  OTHER" vertex="1">
+          <mxGeometry y="194" width="160" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- DTO/Schema Classes -->
+        <mxCell id="class-dto-upsert" parent="layer-domain" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="«DTO» UpsertTransactionSchema" vertex="1">
+          <mxGeometry x="30" y="460" width="280" height="160" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dto-upsert-separator" parent="class-dto-upsert" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#d6b656;" vertex="1">
+          <mxGeometry y="30" width="280" height="8" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dto-upsert-attr1" parent="class-dto-upsert" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ name: z.string()" vertex="1">
+          <mxGeometry y="38" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dto-upsert-attr2" parent="class-dto-upsert" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ amount: z.number()" vertex="1">
+          <mxGeometry y="62" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dto-upsert-attr3" parent="class-dto-upsert" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ type: z.enum(TransactionType)" vertex="1">
+          <mxGeometry y="86" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dto-upsert-attr4" parent="class-dto-upsert" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ category: z.enum(TransactionCategory)" vertex="1">
+          <mxGeometry y="110" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dto-upsert-attr5" parent="class-dto-upsert" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ paymentMethod: z.enum(...)" vertex="1">
+          <mxGeometry y="134" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="class-dto-dashboard" parent="layer-domain" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="«DTO» DashboardData" vertex="1">
+          <mxGeometry x="350" y="460" width="280" height="160" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dto-dashboard-separator" parent="class-dto-dashboard" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#d6b656;" vertex="1">
+          <mxGeometry y="30" width="280" height="8" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dto-dashboard-attr1" parent="class-dto-dashboard" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ balance: number" vertex="1">
+          <mxGeometry y="38" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dto-dashboard-attr2" parent="class-dto-dashboard" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ depositsTotal: number" vertex="1">
+          <mxGeometry y="62" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dto-dashboard-attr3" parent="class-dto-dashboard" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ expensesTotal: number" vertex="1">
+          <mxGeometry y="86" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dto-dashboard-attr4" parent="class-dto-dashboard" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ investmentsTotal: number" vertex="1">
+          <mxGeometry y="110" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dto-dashboard-attr5" parent="class-dto-dashboard" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ lastTransactions: Transaction[]" vertex="1">
+          <mxGeometry y="134" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- ===== DATA ACCESS LAYER ===== -->
+        <mxCell id="layer-data" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;fontSize=14;" value="CAMADA DE ACESSO A DADOS (Data Access Layer)" vertex="1">
+          <mxGeometry x="1100" y="120" width="1050" height="650" as="geometry" />
+        </mxCell>
+
+        <mxCell id="class-prisma-client" parent="layer-data" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=12;" value="PrismaClient" vertex="1">
+          <mxGeometry x="30" y="50" width="300" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prisma-separator" parent="class-prisma-client" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#82b366;" vertex="1">
+          <mxGeometry y="30" width="300" height="8" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prisma-attr1" parent="class-prisma-client" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- transaction: TransactionDelegate" vertex="1">
+          <mxGeometry y="38" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prisma-separator-2" parent="class-prisma-client" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#82b366;" vertex="1">
+          <mxGeometry y="62" width="300" height="8" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prisma-method1" parent="class-prisma-client" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ $connect(): Promise&lt;void&gt;" vertex="1">
+          <mxGeometry y="70" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prisma-method2" parent="class-prisma-client" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ $disconnect(): Promise&lt;void&gt;" vertex="1">
+          <mxGeometry y="94" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prisma-method3" parent="class-prisma-client" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ $transaction&lt;T&gt;(fn): Promise&lt;T&gt;" vertex="1">
+          <mxGeometry y="118" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prisma-method4" parent="class-prisma-client" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ getInstance(): PrismaClient" vertex="1">
+          <mxGeometry y="142" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- Data Queries -->
+        <mxCell id="class-get-dashboard" parent="layer-data" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=12;" value="getDashboard" vertex="1">
+          <mxGeometry x="30" y="260" width="300" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="get-dashboard-separator" parent="class-get-dashboard" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#82b366;" vertex="1">
+          <mxGeometry y="30" width="300" height="8" as="geometry" />
+        </mxCell>
+
+        <mxCell id="get-dashboard-method1" parent="class-get-dashboard" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ execute(month: string): Promise&lt;DashboardData&gt;" vertex="1">
+          <mxGeometry y="38" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="get-dashboard-method2" parent="class-get-dashboard" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- calculateBalance(): number" vertex="1">
+          <mxGeometry y="62" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="class-can-user-add" parent="layer-data" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=12;" value="canUserAddTransaction" vertex="1">
+          <mxGeometry x="30" y="390" width="300" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="can-user-separator" parent="class-can-user-add" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#82b366;" vertex="1">
+          <mxGeometry y="30" width="300" height="8" as="geometry" />
+        </mxCell>
+
+        <mxCell id="can-user-method1" parent="class-can-user-add" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ execute(): Promise&lt;boolean&gt;" vertex="1">
+          <mxGeometry y="38" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BUSINESS LOGIC LAYER ===== -->
+        <mxCell id="layer-business" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=3;fontSize=14;" value="CAMADA DE LÓGICA DE NEGÓCIO (Business Logic Layer)" vertex="1">
+          <mxGeometry x="50" y="820" width="1000" height="580" as="geometry" />
+        </mxCell>
+
+        <!-- Server Actions -->
+        <mxCell id="class-upsert-action" parent="layer-business" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=12;" value="upsertTransaction (Server Action)" vertex="1">
+          <mxGeometry x="30" y="50" width="300" height="140" as="geometry" />
+        </mxCell>
+
+        <mxCell id="upsert-action-separator" parent="class-upsert-action" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#d6b656;" vertex="1">
+          <mxGeometry y="30" width="300" height="8" as="geometry" />
+        </mxCell>
+
+        <mxCell id="upsert-action-method1" parent="class-upsert-action" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ execute(data: UpsertSchema): Promise&lt;void&gt;" vertex="1">
+          <mxGeometry y="38" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="upsert-action-method2" parent="class-upsert-action" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- validateSchema(data): UpsertSchema" vertex="1">
+          <mxGeometry y="62" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="upsert-action-method3" parent="class-upsert-action" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- checkUserPermission(): void" vertex="1">
+          <mxGeometry y="86" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="upsert-action-method4" parent="class-upsert-action" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- revalidatePath(): void" vertex="1">
+          <mxGeometry y="110" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="class-delete-action" parent="layer-business" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=12;" value="deleteTransaction (Server Action)" vertex="1">
+          <mxGeometry x="30" y="220" width="300" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="delete-action-separator" parent="class-delete-action" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#d6b656;" vertex="1">
+          <mxGeometry y="30" width="300" height="8" as="geometry" />
+        </mxCell>
+
+        <mxCell id="delete-action-method1" parent="class-delete-action" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ execute(id: string): Promise&lt;void&gt;" vertex="1">
+          <mxGeometry y="38" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="delete-action-method2" parent="class-delete-action" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- checkOwnership(id, userId): void" vertex="1">
+          <mxGeometry y="62" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="class-ai-report-action" parent="layer-business" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=12;" value="generateAiReport (Server Action)" vertex="1">
+          <mxGeometry x="30" y="350" width="300" height="120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ai-report-separator" parent="class-ai-report-action" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#d6b656;" vertex="1">
+          <mxGeometry y="30" width="300" height="8" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ai-report-method1" parent="class-ai-report-action" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ execute(month: string): Promise&lt;string&gt;" vertex="1">
+          <mxGeometry y="38" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ai-report-method2" parent="class-ai-report-action" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- verifyPremiumPlan(): void" vertex="1">
+          <mxGeometry y="62" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ai-report-method3" parent="class-ai-report-action" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- buildPrompt(transactions): string" vertex="1">
+          <mxGeometry y="86" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="class-stripe-checkout" parent="layer-business" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=12;" value="createStripeCheckout (Server Action)" vertex="1">
+          <mxGeometry x="370" y="50" width="300" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="stripe-checkout-separator" parent="class-stripe-checkout" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#d6b656;" vertex="1">
+          <mxGeometry y="30" width="300" height="8" as="geometry" />
+        </mxCell>
+
+        <mxCell id="stripe-checkout-method1" parent="class-stripe-checkout" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ execute(): Promise&lt;SessionUrl&gt;" vertex="1">
+          <mxGeometry y="38" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="stripe-checkout-method2" parent="class-stripe-checkout" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- createCheckoutSession(): Stripe.Session" vertex="1">
+          <mxGeometry y="62" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- ===== EXTERNAL SERVICES LAYER ===== -->
+        <mxCell id="layer-external" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=3;fontSize=14;" value="CAMADA DE SERVIÇOS EXTERNOS (External Services Layer)" vertex="1">
+          <mxGeometry x="1100" y="820" width="1050" height="580" as="geometry" />
+        </mxCell>
+
+        <mxCell id="class-clerk-service" parent="layer-external" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=12;" value="ClerkAuthService (Externo)" vertex="1">
+          <mxGeometry x="30" y="50" width="300" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="clerk-separator" parent="class-clerk-service" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#b85450;" vertex="1">
+          <mxGeometry y="30" width="300" height="8" as="geometry" />
+        </mxCell>
+
+        <mxCell id="clerk-method1" parent="class-clerk-service" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ auth(): { userId: string | null }" vertex="1">
+          <mxGeometry y="38" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="clerk-method2" parent="class-clerk-service" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ currentUser(): Promise&lt;User&gt;" vertex="1">
+          <mxGeometry y="62" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="clerk-method3" parent="class-clerk-service" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ clerkClient.users.updateUserMetadata()" vertex="1">
+          <mxGeometry y="86" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="clerk-method4" parent="class-clerk-service" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ redirectToSignIn(): void" vertex="1">
+          <mxGeometry y="110" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="clerk-method5" parent="class-clerk-service" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ SignIn, SignUp, UserButton components" vertex="1">
+          <mxGeometry y="134" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="class-stripe-service" parent="layer-external" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=12;" value="StripePaymentService (Externo)" vertex="1">
+          <mxGeometry x="30" y="260" width="300" height="160" as="geometry" />
+        </mxCell>
+
+        <mxCell id="stripe-separator" parent="class-stripe-service" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#b85450;" vertex="1">
+          <mxGeometry y="30" width="300" height="8" as="geometry" />
+        </mxCell>
+
+        <mxCell id="stripe-method1" parent="class-stripe-service" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ createCheckoutSession(): Promise&lt;Session&gt;" vertex="1">
+          <mxGeometry y="38" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="stripe-method2" parent="class-stripe-service" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ constructWebhookEvent(): Event" vertex="1">
+          <mxGeometry y="62" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="stripe-method3" parent="class-stripe-service" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ handleInvoicePaid(event): void" vertex="1">
+          <mxGeometry y="86" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="stripe-method4" parent="class-stripe-service" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ handleSubscriptionDeleted(event): void" vertex="1">
+          <mxGeometry y="110" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="class-openai-service" parent="layer-external" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=12;" value="OpenAIService (Externo)" vertex="1">
+          <mxGeometry x="370" y="50" width="300" height="120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="openai-separator" parent="class-openai-service" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#b85450;" vertex="1">
+          <mxGeometry y="30" width="300" height="8" as="geometry" />
+        </mxCell>
+
+        <mxCell id="openai-method1" parent="class-openai-service" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ chat.completions.create(): Promise&lt;string&gt;" vertex="1">
+          <mxGeometry y="38" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="openai-method2" parent="class-openai-service" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- model: 'gpt-4o-mini'" vertex="1">
+          <mxGeometry y="62" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- ===== PRESENTATION LAYER ===== -->
+        <mxCell id="layer-presentation" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=3;fontSize=14;" value="CAMADA DE APRESENTAÇÃO (Presentation Layer - React Components)" vertex="1">
+          <mxGeometry x="50" y="1450" width="2100" height="430" as="geometry" />
+        </mxCell>
+
+        <!-- React Components -->
+        <mxCell id="component-dashboard-page" parent="layer-presentation" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=12;" value="DashboardPage (Server Component)" vertex="1">
+          <mxGeometry x="30" y="50" width="280" height="120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dashboard-page-separator" parent="component-dashboard-page" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#9673a6;" vertex="1">
+          <mxGeometry y="30" width="280" height="8" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dashboard-page-prop1" parent="component-dashboard-page" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ searchParams: { month?: string }" vertex="1">
+          <mxGeometry y="38" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dashboard-page-method1" parent="component-dashboard-page" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ render(): ReactElement" vertex="1">
+          <mxGeometry y="62" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dashboard-page-method2" parent="component-dashboard-page" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- fetchData(): DashboardData" vertex="1">
+          <mxGeometry y="86" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="component-transactions-page" parent="layer-presentation" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=12;" value="TransactionsPage (Server Component)" vertex="1">
+          <mxGeometry x="350" y="50" width="280" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="transactions-page-separator" parent="component-transactions-page" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#9673a6;" vertex="1">
+          <mxGeometry y="30" width="280" height="8" as="geometry" />
+        </mxCell>
+
+        <mxCell id="transactions-page-method1" parent="component-transactions-page" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ render(): ReactElement" vertex="1">
+          <mxGeometry y="38" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="transactions-page-method2" parent="component-transactions-page" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- fetchTransactions(): Transaction[]" vertex="1">
+          <mxGeometry y="62" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="component-subscription-page" parent="layer-presentation" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=12;" value="SubscriptionPage (Server Component)" vertex="1">
+          <mxGeometry x="670" y="50" width="280" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="subscription-page-separator" parent="component-subscription-page" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#9673a6;" vertex="1">
+          <mxGeometry y="30" width="280" height="8" as="geometry" />
+        </mxCell>
+
+        <mxCell id="subscription-page-method1" parent="component-subscription-page" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ render(): ReactElement" vertex="1">
+          <mxGeometry y="38" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="component-upsert-dialog" parent="layer-presentation" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=12;" value="UpsertTransactionDialog (Client)" vertex="1">
+          <mxGeometry x="30" y="200" width="280" height="140" as="geometry" />
+        </mxCell>
+
+        <mxCell id="upsert-dialog-separator" parent="component-upsert-dialog" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#9673a6;" vertex="1">
+          <mxGeometry y="30" width="280" height="8" as="geometry" />
+        </mxCell>
+
+        <mxCell id="upsert-dialog-prop1" parent="component-upsert-dialog" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ isOpen: boolean" vertex="1">
+          <mxGeometry y="38" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="upsert-dialog-prop2" parent="component-upsert-dialog" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ transaction?: Transaction" vertex="1">
+          <mxGeometry y="62" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="upsert-dialog-method1" parent="component-upsert-dialog" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ handleSubmit(data): void" vertex="1">
+          <mxGeometry y="86" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="upsert-dialog-method2" parent="component-upsert-dialog" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ render(): ReactElement" vertex="1">
+          <mxGeometry y="110" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="component-navbar" parent="layer-presentation" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=12;" value="Navbar (Client Component)" vertex="1">
+          <mxGeometry x="350" y="200" width="280" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="navbar-separator" parent="component-navbar" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#9673a6;" vertex="1">
+          <mxGeometry y="30" width="280" height="8" as="geometry" />
+        </mxCell>
+
+        <mxCell id="navbar-method1" parent="component-navbar" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ render(): ReactElement" vertex="1">
+          <mxGeometry y="38" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="component-data-table" parent="layer-presentation" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=12;" value="DataTable (Client Component)" vertex="1">
+          <mxGeometry x="670" y="200" width="280" height="120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="data-table-separator" parent="component-data-table" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#9673a6;" vertex="1">
+          <mxGeometry y="30" width="280" height="8" as="geometry" />
+        </mxCell>
+
+        <mxCell id="data-table-prop1" parent="component-data-table" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ columns: ColumnDef[]" vertex="1">
+          <mxGeometry y="38" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="data-table-prop2" parent="component-data-table" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ data: Transaction[]" vertex="1">
+          <mxGeometry y="62" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="data-table-method1" parent="component-data-table" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ render(): ReactElement" vertex="1">
+          <mxGeometry y="86" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- Relationships -->
+        <mxCell id="rel-transaction-enum-type" edge="1" parent="1" source="class-transaction" target="enum-type-class" style="endArrow=open;endFill=0;html=1;strokeWidth=1.5;strokeColor=#666666;dashed=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="rel-transaction-enum-cat" edge="1" parent="1" source="class-transaction" target="enum-category-class" style="endArrow=open;endFill=0;html=1;strokeWidth=1.5;strokeColor=#666666;dashed=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="rel-transaction-enum-pay" edge="1" parent="1" source="class-transaction" target="enum-payment-class" style="endArrow=open;endFill=0;html=1;strokeWidth=1.5;strokeColor=#666666;dashed=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="rel-prisma-transaction" edge="1" parent="1" source="class-prisma-client" target="class-transaction" style="endArrow=diamondThin;endFill=1;html=1;strokeWidth=2;strokeColor=#82b366;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1100" y="320" />
+              <mxPoint x="240" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="rel-upsert-prisma" edge="1" parent="1" source="class-upsert-action" target="class-prisma-client" style="endArrow=open;endFill=0;html=1;strokeWidth=1.5;strokeColor=#666666;dashed=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1050" y="940" />
+              <mxPoint x="1050" y="260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="rel-upsert-clerk" edge="1" parent="1" source="class-upsert-action" target="class-clerk-service" style="endArrow=open;endFill=0;html=1;strokeWidth=1.5;strokeColor=#666666;dashed=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1050" y="940" />
+              <mxPoint x="1050" y="960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="rel-ai-openai" edge="1" parent="1" source="class-ai-report-action" target="class-openai-service" style="endArrow=open;endFill=0;html=1;strokeWidth=1.5;strokeColor=#666666;dashed=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1050" y="1080" />
+              <mxPoint x="1050" y="960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="rel-stripe-action-service" edge="1" parent="1" source="class-stripe-checkout" target="class-stripe-service" style="endArrow=open;endFill=0;html=1;strokeWidth=1.5;strokeColor=#666666;dashed=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1050" y="920" />
+              <mxPoint x="1050" y="1180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="rel-dashboard-page-get" edge="1" parent="1" source="component-dashboard-page" target="class-get-dashboard" style="endArrow=open;endFill=0;html=1;strokeWidth=1.5;strokeColor=#666666;dashed=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1000" y="1560" />
+              <mxPoint x="1000" y="550" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="rel-dialog-upsert" edge="1" parent="1" source="component-upsert-dialog" target="class-upsert-action" style="endArrow=open;endFill=0;html=1;strokeWidth=1.5;strokeColor=#666666;dashed=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="220" y="1400" />
+              <mxPoint x="220" y="940" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend-box-2" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;" value="Legenda" vertex="1">
+          <mxGeometry x="50" y="1920" width="2100" height="120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-2-1" parent="legend-box-2" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="━━━━➤ = Associação/Dependência | ◆━━━━ = Composição | ─ ─ ─ ➤ = Dependência/Uso" vertex="1">
+          <mxGeometry y="30" width="2100" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-2-2" parent="legend-box-2" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="Cores das Camadas: Azul = Domínio | Verde = Dados | Amarelo = Lógica de Negócio | Vermelho = Serviços Externos | Roxo = Apresentação" vertex="1">
+          <mxGeometry y="50" width="2100" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-2-3" parent="legend-box-2" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="Arquitetura: Next.js 14 App Router com separação em camadas | Server Components para SSR | Client Components para interatividade | Server Actions para mutações" vertex="1">
+          <mxGeometry y="70" width="2100" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-2-4" parent="legend-box-2" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="Padrões: Repository Pattern (Prisma), DTO Pattern (Zod schemas), Service Layer (Server Actions), External Services Integration (Clerk, Stripe, OpenAI)" vertex="1">
+          <mxGeometry y="90" width="2100" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

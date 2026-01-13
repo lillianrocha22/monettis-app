@@ -1,0 +1,391 @@
+<mxfile host="app.diagrams.net" agent="Claude Code" version="24.0.0">
+  <diagram name="Componentes - Arquitetura Modular" id="components-main">
+    <mxGraphModel dx="2400" dy="1600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3200" pageHeight="3600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- TÍTULO -->
+        <mxCell id="title" value="Diagrama de Componentes - Monettis App&#xa;Arquitetura Modular Organizada por Tiers e Camadas" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="800" y="20" width="1200" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- LEGENDA -->
+        <mxCell id="legend-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="520" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" value="LEGENDA - TIERS E TIPOS DE COMPONENTES" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="110" width="500" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-t1" value="🟦 TIER 1 - R$ 14,00/mês - Premium Individual" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="150" width="480" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-t2" value="🟩 TIER 2 - R$ 23,90/mês - Família Plus (Futuro)" style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="180" width="480" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-t3" value="🟧 TIER 3 - R$ 45,90/mês - Business Enterprise (Futuro)" style="text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="210" width="480" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-external" value="🔴 Serviços Externos (Clerk, Stripe, OpenAI, WhatsApp)" style="text;html=1;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="240" width="480" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-shared" value="⬜ Componentes Compartilhados (UI, Utils, Libs)" style="text;html=1;strokeColor=#666666;fillColor=#f5f5f5;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="270" width="480" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-db" value="🟣 Banco de Dados (PostgreSQL + Prisma)" style="text;html=1;strokeColor=#9673a6;fillColor=#e1d5e7;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="300" width="480" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-arrows" value="→ Dependência direta    ⇢ Dependência opcional    ⇠ Evento/Callback" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="60" y="340" width="480" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ========== CAMADA 1: PRESENTATION LAYER ========== -->
+
+        <mxCell id="layer-presentation" value="PRESENTATION LAYER - Páginas e Componentes React" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;align=center;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="420" width="2800" height="400" as="geometry" />
+        </mxCell>
+
+        <!-- Módulo: Dashboard -->
+        <mxCell id="comp-dashboard" value="&lt;&lt;component&gt;&gt;&#xa;Dashboard Module&#xa;app/(home)/" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="80" y="480" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-dashboard-details" value="Componentes:&#xa;• SummaryCards&#xa;• ExpensesPerCategory&#xa;• LastTransactions&#xa;• TimeSelect&#xa;• AiReportButton" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="80" y="570" width="200" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Módulo: Transactions -->
+        <mxCell id="comp-transactions" value="&lt;&lt;component&gt;&gt;&#xa;Transactions Module&#xa;app/transactions/" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="320" y="480" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-transactions-details" value="Componentes:&#xa;• DataTable&#xa;• TypeBadge&#xa;• EditTransactionButton&#xa;• DeleteTransactionButton&#xa;• TransactionColumns" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="320" y="570" width="200" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Módulo: Subscription -->
+        <mxCell id="comp-subscription" value="&lt;&lt;component&gt;&gt;&#xa;Subscription Module&#xa;app/subscription/" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="560" y="480" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-subscription-details" value="Componentes:&#xa;• AcquirePlanButton&#xa;• PlanCards&#xa;• CurrentPlanBadge&#xa;• StripeCheckout" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="560" y="570" width="200" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Módulo: Login -->
+        <mxCell id="comp-login" value="&lt;&lt;component&gt;&gt;&#xa;Login Module&#xa;app/login/" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="800" y="480" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-login-details" value="Componentes:&#xa;• SignIn (Clerk)&#xa;• RedirectHandler" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="800" y="570" width="180" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Módulo: Family (T2) -->
+        <mxCell id="comp-family" value="&lt;&lt;component&gt;&gt; 🟩 TIER 2&#xa;Family Module&#xa;app/family/ (Futuro)" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="480" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-family-details" value="Componentes (Planejado):&#xa;• FamilyDashboard&#xa;• MembersList&#xa;• AllowanceManager&#xa;• ExpenseSplitForm&#xa;• ParentalControls&#xa;• FamilyChat" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="570" width="200" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Módulo: Business (T3) -->
+        <mxCell id="comp-business" value="&lt;&lt;component&gt;&gt; 🟧 TIER 3&#xa;Business Module&#xa;app/business/ (Futuro)" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="480" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-business-details" value="Componentes (Planejado):&#xa;• BusinessDashboard&#xa;• DREReport&#xa;• CostCentersManager&#xa;• ClientsSuppliersCRUD&#xa;• InvoiceGenerator&#xa;• TaxCalculator&#xa;• CashFlowProjection&#xa;• ReconciliationView" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="570" width="200" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- Componentes Compartilhados UI -->
+        <mxCell id="comp-ui" value="&lt;&lt;component&gt;&gt;&#xa;UI Components&#xa;app/_components/ui/" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1520" y="480" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-ui-details" value="shadcn/ui Components:&#xa;• Button, Card, Dialog&#xa;• Form, Input, Select&#xa;• Table, DataTable&#xa;• DatePicker, Popover&#xa;• Toast, Tooltip&#xa;• ScrollArea, etc." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1520" y="570" width="200" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Componentes Globais -->
+        <mxCell id="comp-global" value="&lt;&lt;component&gt;&gt;&#xa;Global Components&#xa;app/_components/" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1760" y="480" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-global-details" value="Componentes Globais:&#xa;• Navbar&#xa;• AddTransactionButton&#xa;• MoneyInput&#xa;• UpsertTransactionDialog" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1760" y="570" width="200" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Layout -->
+        <mxCell id="comp-layout" value="&lt;&lt;component&gt;&gt;&#xa;Layout&#xa;app/layout.tsx" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2000" y="480" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-layout-details" value="Responsabilidades:&#xa;• ClerkProvider&#xa;• ThemeProvider&#xa;• Toaster&#xa;• Global Styles" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="2000" y="570" width="180" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ========== CAMADA 2: APPLICATION LAYER ========== -->
+
+        <mxCell id="layer-application" value="APPLICATION LAYER - Server Actions e Data Fetching" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;align=center;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="860" width="2800" height="340" as="geometry" />
+        </mxCell>
+
+        <!-- Server Actions -->
+        <mxCell id="comp-actions-label" value="Server Actions ('use server')" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="80" y="900" width="240" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-action-upsert" value="&lt;&lt;action&gt;&gt;&#xa;upsertTransaction&#xa;app/_actions/upsert-transaction/" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="935" width="220" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-action-delete" value="&lt;&lt;action&gt;&gt;&#xa;deleteTransaction&#xa;app/transactions/_actions/" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="320" y="935" width="220" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-action-ai" value="&lt;&lt;action&gt;&gt;&#xa;generateAiReport&#xa;app/(home)/_actions/" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="560" y="935" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-action-stripe" value="&lt;&lt;action&gt;&gt;&#xa;createStripeCheckout&#xa;app/subscription/_actions/" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="780" y="935" width="220" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Server Actions T2 -->
+        <mxCell id="comp-action-family" value="&lt;&lt;action&gt;&gt; 🟩 TIER 2&#xa;inviteFamilyMember&#xa;(Planejado)" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="935" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-action-allowance" value="&lt;&lt;action&gt;&gt; 🟩 TIER 2&#xa;createAllowance&#xa;(Planejado)" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="935" width="180" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Server Actions T3 -->
+        <mxCell id="comp-action-business" value="&lt;&lt;action&gt;&gt; 🟧 TIER 3&#xa;createBusinessProfile&#xa;(Planejado)" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1440" y="935" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-action-invoice" value="&lt;&lt;action&gt;&gt; 🟧 TIER 3&#xa;issueInvoice&#xa;(Planejado)" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1660" y="935" width="180" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Data Layer -->
+        <mxCell id="comp-data-label" value="Data Layer (app/_data/)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="80" y="1020" width="200" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-data-dashboard" value="&lt;&lt;data&gt;&gt;&#xa;getDashboard&#xa;Busca dados agregados" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1055" width="200" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-data-transactions" value="&lt;&lt;data&gt;&gt;&#xa;getCurrentMonthTransactions&#xa;Lista transações do mês" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="300" y="1055" width="220" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-data-canAdd" value="&lt;&lt;data&gt;&gt;&#xa;canUserAddTransaction&#xa;Verifica limite free tier" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="540" y="1055" width="220" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-data-years" value="&lt;&lt;data&gt;&gt;&#xa;getAvailableYears&#xa;Anos com transações" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="780" y="1055" width="200" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Schemas (Zod) -->
+        <mxCell id="comp-schemas-label" value="Validation Schemas (Zod)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1020" y="1020" width="200" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-schema-transaction" value="&lt;&lt;schema&gt;&gt;&#xa;upsertTransactionSchema&#xa;Validação de transação" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="1055" width="220" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- API Routes -->
+        <mxCell id="comp-api-label" value="API Routes (app/api/)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1280" y="1020" width="200" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-api-webhook" value="&lt;&lt;api&gt;&gt;&#xa;Stripe Webhook&#xa;app/api/webhooks/stripe/" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="1055" width="200" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- ========== CAMADA 3: DOMAIN/INFRASTRUCTURE ========== -->
+
+        <mxCell id="layer-domain" value="DOMAIN/INFRASTRUCTURE LAYER - Libs, Utils e Configurações" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;align=center;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1240" width="2800" height="280" as="geometry" />
+        </mxCell>
+
+        <!-- Libs -->
+        <mxCell id="comp-libs-label" value="Libraries (app/_lib/)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="80" y="1280" width="200" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-lib-prisma" value="&lt;&lt;lib&gt;&gt;&#xa;prisma.ts&#xa;Cliente Prisma singleton" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1315" width="180" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-lib-stripe" value="&lt;&lt;lib&gt;&gt;&#xa;stripe.ts&#xa;Cliente Stripe config" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1315" width="180" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-lib-auth" value="&lt;&lt;lib&gt;&gt;&#xa;auth.ts&#xa;Helper Clerk auth()" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1315" width="180" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-lib-utils" value="&lt;&lt;lib&gt;&gt;&#xa;utils.ts&#xa;cn() class merger" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="680" y="1315" width="160" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Constants -->
+        <mxCell id="comp-constants-label" value="Constants (app/_constants/)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="880" y="1280" width="240" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-const-transactions" value="&lt;&lt;constant&gt;&gt;&#xa;transactions.ts&#xa;TRANSACTION_TYPE_OPTIONS&#xa;TRANSACTION_CATEGORY_OPTIONS&#xa;TRANSACTION_PAYMENT_OPTIONS" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="880" y="1315" width="260" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Utils -->
+        <mxCell id="comp-utils-label" value="Utils (app/_utils/)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1180" y="1280" width="180" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-util-currency" value="&lt;&lt;util&gt;&gt;&#xa;format-currency.ts&#xa;Formatação R$ brasileiro" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="1315" width="200" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Prisma Schema -->
+        <mxCell id="comp-prisma-label" value="Prisma Schema" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1420" y="1280" width="180" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-prisma-schema" value="&lt;&lt;schema&gt;&gt;&#xa;schema.prisma&#xa;• Transaction model&#xa;• Enums (Type, Category, PaymentMethod)&#xa;• Futuro: CreditCard, BankAccount, Goal, etc." style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="1315" width="280" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Middleware -->
+        <mxCell id="comp-middleware" value="&lt;&lt;middleware&gt;&gt;&#xa;middleware.ts&#xa;clerkMiddleware() + protected routes" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1740" y="1315" width="260" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Config Files -->
+        <mxCell id="comp-config-label" value="Config Files" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="2040" y="1280" width="180" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-config-next" value="next.config.mjs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="2040" y="1315" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-config-tailwind" value="tailwind.config.ts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="2150" y="1315" width="110" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-config-ts" value="tsconfig.json" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="2270" y="1315" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-config-eslint" value=".eslintrc.json" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="2040" y="1360" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-config-components" value="components.json" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="2150" y="1360" width="120" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- ========== CAMADA 4: EXTERNAL SERVICES ========== -->
+
+        <mxCell id="layer-external" value="EXTERNAL SERVICES LAYER - Integrações com Serviços Externos" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;verticalAlign=top;align=center;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1560" width="2800" height="200" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-clerk" value="&lt;&lt;external&gt;&gt;&#xa;Clerk&#xa;Authentication Provider" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1610" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-clerk-details" value="• Sign In/Up flows&#xa;• Session management&#xa;• User metadata (tier)&#xa;• JWT tokens" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1680" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-stripe" value="&lt;&lt;external&gt;&gt;&#xa;Stripe&#xa;Payment Processing" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="320" y="1610" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-stripe-details" value="• Subscriptions&#xa;• Checkout sessions&#xa;• Webhooks&#xa;• Customer portal" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="320" y="1680" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-openai" value="&lt;&lt;external&gt;&gt;&#xa;OpenAI&#xa;AI Report Generation" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="560" y="1610" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-openai-details" value="• GPT-4o-mini model&#xa;• Financial analysis&#xa;• Suggestions&#xa;• Markdown output" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="560" y="1680" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-whatsapp" value="&lt;&lt;external&gt;&gt;&#xa;WhatsApp Business&#xa;Notifications (Planejado)" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="800" y="1610" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-whatsapp-details" value="• Bill reminders&#xa;• Transaction alerts&#xa;• Goal notifications&#xa;• Template messages" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="800" y="1680" width="220" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-nfse" value="&lt;&lt;external&gt;&gt; 🟧 TIER 3&#xa;NFSe API&#xa;Fiscal Notes (Planejado)" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="1610" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-openbanking" value="&lt;&lt;external&gt;&gt;&#xa;Open Banking&#xa;Bank Integration (Planejado)" style="shape=component;align=left;spacingLeft=36;rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="1610" width="220" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ========== CAMADA 5: DATA LAYER ========== -->
+
+        <mxCell id="layer-data" value="DATA LAYER - Banco de Dados" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;align=center;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1800" width="2800" height="160" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-neon" value="&lt;&lt;database&gt;&gt;&#xa;Neon PostgreSQL 16&#xa;Serverless Database" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1850" width="180" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-db-transaction" value="Transaction" style="shape=table;startSize=20;container=1;collapsible=0;childLayout=tableLayout;fontSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="300" y="1850" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-db-transaction-row1" value="id: String (PK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;fontSize=9;" vertex="1" parent="comp-db-transaction">
+          <mxGeometry y="20" width="160" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-db-transaction-row2" value="name, type, amount..." style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;fontSize=9;" vertex="1" parent="comp-db-transaction">
+          <mxGeometry y="36" width="160" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-db-transaction-row3" value="category, paymentMethod" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;fontSize=9;" vertex="1" parent="comp-db-transaction">
+          <mxGeometry y="52" width="160" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-db-transaction-row4" value="date, userId (FK Clerk)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;fontSize=9;" vertex="1" parent="comp-db-transaction">
+          <mxGeometry y="68" width="160" height="16" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-db-future" value="Tabelas Futuras (Planejado):&#xa;&#xa;• CreditCard, BankAccount, Goal (T1)&#xa;• FamilyMember, Allowance, ExpenseSplit (T2)&#xa;• BusinessProfile, Invoice, CostCenter (T3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;verticalAlign=top;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="500" y="1850" width="300" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Dependências principais (setas) -->
+        <mxCell id="dep-dashboard-action" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;strokeColor=#6c8ebf;dashed=1;" edge="1" parent="1" source="comp-dashboard" target="comp-action-ai">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep-transactions-action" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;strokeColor=#6c8ebf;dashed=1;" edge="1" parent="1" source="comp-transactions" target="comp-action-delete">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep-subscription-action" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;strokeColor=#6c8ebf;dashed=1;" edge="1" parent="1" source="comp-subscription" target="comp-action-stripe">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep-action-prisma" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;strokeColor=#9673a6;dashed=1;" edge="1" parent="1" source="comp-action-upsert" target="comp-lib-prisma">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep-lib-neon" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#9673a6;" edge="1" parent="1" source="comp-lib-prisma" target="comp-neon">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep-action-stripe" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;strokeColor=#b85450;dashed=1;" edge="1" parent="1" source="comp-action-stripe" target="comp-stripe">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep-action-openai" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;strokeColor=#b85450;dashed=1;" edge="1" parent="1" source="comp-action-ai" target="comp-openai">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep-login-clerk" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;strokeColor=#b85450;dashed=1;" edge="1" parent="1" source="comp-login" target="comp-clerk">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Notas -->
+        <mxCell id="notes" value="NOTAS:&#xa;&#xa;• Arquitetura modular com separação clara de responsabilidades por camada&#xa;• Componentes T1 (azul) implementados, T2 (verde) e T3 (laranja) planejados&#xa;• Server Actions substituem endpoints REST tradicionais&#xa;• Prisma ORM como única interface com o banco de dados&#xa;• Serviços externos acessados através de libs específicas&#xa;• shadcn/ui como biblioteca de componentes base" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=10;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="840" y="1850" width="600" height="100" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

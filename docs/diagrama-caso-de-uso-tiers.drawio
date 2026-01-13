@@ -1,0 +1,571 @@
+<mxfile host="app.diagrams.net" agent="Claude Code" version="24.0.0">
+  <diagram name="Casos de Uso - Tiers" id="use-case-tiers">
+    <mxGraphModel dx="1434" dy="844" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="2000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- TÍTULO -->
+        <mxCell id="title" value="Diagrama de Casos de Uso - Monettis App&#xa;Organizado por Tiers de Versão" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="20" width="800" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- LEGENDA -->
+        <mxCell id="legend-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="320" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" value="LEGENDA - TIERS DE VERSÃO" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="110" width="300" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-t1" value="🟦 TIER 1 - R$ 14,00/mês" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="150" width="280" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-t1-desc" value="Premium Individual - 17 casos de uso&#xa;Funcionalidades essenciais individuais" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="178" width="260" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-t2" value="🟩 TIER 2 - R$ 23,90/mês" style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="215" width="280" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-t2-desc" value="Família Plus - 12 casos de uso adicionais&#xa;Recursos para gestão familiar (até 4 usuários)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="243" width="260" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-t3" value="🟧 TIER 3 - R$ 45,90/mês" style="text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="280" width="280" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-t3-desc" value="Business Enterprise - 15 casos de uso adicionais&#xa;Ferramentas empresariais completas" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="308" width="260" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-total" value="TOTAL: 44 casos de uso mapeados" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="60" y="350" width="280" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ========== ATORES ========== -->
+
+        <!-- Ator: Usuário Individual (Tier 1) -->
+        <mxCell id="actor-user-t1" value="Usuário&#xa;Individual&#xa;(TIER 1)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="80" y="500" width="40" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Ator: Membro Familiar (Tier 2) -->
+        <mxCell id="actor-family" value="Membro&#xa;Familiar&#xa;(TIER 2)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1100" width="40" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Ator: Usuário Empresarial (Tier 3) -->
+        <mxCell id="actor-business" value="Usuário&#xa;Empresarial&#xa;(TIER 3)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1600" width="40" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Sistemas Externos -->
+        <mxCell id="actor-clerk" value="&lt;&lt;Sistema Externo&gt;&gt;&#xa;Clerk&#xa;(Autenticação)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="500" width="40" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="actor-stripe" value="&lt;&lt;Sistema Externo&gt;&gt;&#xa;Stripe&#xa;(Pagamentos)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="700" width="40" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="actor-openai" value="&lt;&lt;Sistema Externo&gt;&gt;&#xa;OpenAI&#xa;(IA)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="900" width="40" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="actor-whatsapp" value="&lt;&lt;Sistema Externo&gt;&gt;&#xa;WhatsApp&#xa;(Notificações)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="1100" width="40" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ========== TIER 1 - CASOS DE USO ========== -->
+
+        <!-- Container Tier 1 -->
+        <mxCell id="container-t1" value="TIER 1 - Premium Individual (R$ 14,00/mês)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=top;align=center;fontStyle=1;fontSize=12;opacity=20;" vertex="1" parent="1">
+          <mxGeometry x="200" y="440" width="1200" height="600" as="geometry" />
+        </mxCell>
+
+        <!-- Módulo: Autenticação -->
+        <mxCell id="uc-t1-login" value="Fazer Login/Logout" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="280" y="480" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t1-profile" value="Gerenciar Perfil" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="280" y="570" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Módulo: Dashboard -->
+        <mxCell id="uc-t1-dashboard" value="Visualizar Dashboard&#xa;Financeiro" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="480" y="480" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Módulo: Transações -->
+        <mxCell id="uc-t1-create-trans" value="Criar Transação" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="480" y="570" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t1-edit-trans" value="Editar Transação" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="480" y="660" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t1-delete-trans" value="Excluir Transação" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="480" y="750" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t1-filter-trans" value="Filtrar Transações" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="480" y="840" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Módulo: Importações -->
+        <mxCell id="uc-t1-import-bank" value="Importar Extrato&#xa;Bancário" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="680" y="480" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t1-import-card" value="Importar Fatura&#xa;de Cartão" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="680" y="570" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Módulo: Cartões e Contas -->
+        <mxCell id="uc-t1-manage-cards" value="Gerenciar Cartões&#xa;de Crédito" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="680" y="660" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t1-manage-accounts" value="Gerenciar Contas&#xa;Bancárias" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="680" y="750" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Módulo: Metas -->
+        <mxCell id="uc-t1-create-goal" value="Criar Meta&#xa;Financeira" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="880" y="480" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Módulo: Contas a Pagar/Receber -->
+        <mxCell id="uc-t1-bills" value="Gerenciar Contas&#xa;a Pagar/Receber" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="880" y="570" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Módulo: WhatsApp -->
+        <mxCell id="uc-t1-whatsapp" value="Enviar Notificação&#xa;WhatsApp" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="480" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Módulo: Relatórios IA -->
+        <mxCell id="uc-t1-ai-report" value="Gerar Relatório&#xa;com IA" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="570" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Módulo: Assinatura -->
+        <mxCell id="uc-t1-subscription" value="Gerenciar&#xa;Assinatura" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="660" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t1-payment" value="Processar&#xa;Pagamento" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="750" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Relacionamentos Tier 1 -->
+        <mxCell id="rel-user-login" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.3;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="actor-user-t1" target="uc-t1-login">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="520" as="sourcePoint" />
+            <mxPoint x="280" y="515" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-user-profile" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-user-t1" target="uc-t1-profile">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="540" as="sourcePoint" />
+            <mxPoint x="280" y="605" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-user-dashboard" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-user-t1" target="uc-t1-dashboard">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="540" as="sourcePoint" />
+            <mxPoint x="480" y="515" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-user-create" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-user-t1" target="uc-t1-create-trans">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="540" as="sourcePoint" />
+            <mxPoint x="480" y="605" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-user-edit" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-user-t1" target="uc-t1-edit-trans">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="560" as="sourcePoint" />
+            <mxPoint x="480" y="695" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-user-delete" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-user-t1" target="uc-t1-delete-trans">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="580" as="sourcePoint" />
+            <mxPoint x="480" y="785" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-user-filter" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-user-t1" target="uc-t1-filter-trans">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="600" as="sourcePoint" />
+            <mxPoint x="480" y="875" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-user-import-bank" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-user-t1" target="uc-t1-import-bank">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="540" as="sourcePoint" />
+            <mxPoint x="680" y="515" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-user-import-card" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-user-t1" target="uc-t1-import-card">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="540" as="sourcePoint" />
+            <mxPoint x="680" y="605" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-user-cards" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-user-t1" target="uc-t1-manage-cards">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="560" as="sourcePoint" />
+            <mxPoint x="680" y="695" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-user-accounts" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-user-t1" target="uc-t1-manage-accounts">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="580" as="sourcePoint" />
+            <mxPoint x="680" y="785" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-user-goal" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-user-t1" target="uc-t1-create-goal">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="540" as="sourcePoint" />
+            <mxPoint x="880" y="515" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-user-bills" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-user-t1" target="uc-t1-bills">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="540" as="sourcePoint" />
+            <mxPoint x="880" y="605" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-user-whatsapp" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-user-t1" target="uc-t1-whatsapp">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="540" as="sourcePoint" />
+            <mxPoint x="1080" y="515" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-user-ai" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-user-t1" target="uc-t1-ai-report">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="540" as="sourcePoint" />
+            <mxPoint x="1080" y="605" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-user-subscription" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-user-t1" target="uc-t1-subscription">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="560" as="sourcePoint" />
+            <mxPoint x="1080" y="695" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-user-payment" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-user-t1" target="uc-t1-payment">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="580" as="sourcePoint" />
+            <mxPoint x="1080" y="785" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Relacionamentos com Sistemas Externos (Tier 1) -->
+        <mxCell id="rel-login-clerk" value="" style="endArrow=none;html=1;dashed=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.3;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="actor-clerk" target="uc-t1-login">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1480" y="530" as="sourcePoint" />
+            <mxPoint x="420" y="515" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-profile-clerk" value="" style="endArrow=none;html=1;dashed=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-clerk" target="uc-t1-profile">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1480" y="540" as="sourcePoint" />
+            <mxPoint x="420" y="605" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-subscription-stripe" value="" style="endArrow=none;html=1;dashed=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.3;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="actor-stripe" target="uc-t1-subscription">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1480" y="730" as="sourcePoint" />
+            <mxPoint x="1220" y="695" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-payment-stripe" value="" style="endArrow=none;html=1;dashed=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-stripe" target="uc-t1-payment">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1480" y="750" as="sourcePoint" />
+            <mxPoint x="1220" y="785" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-ai-openai" value="" style="endArrow=none;html=1;dashed=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.3;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="actor-openai" target="uc-t1-ai-report">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1480" y="930" as="sourcePoint" />
+            <mxPoint x="1220" y="605" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-whatsapp-system" value="" style="endArrow=none;html=1;dashed=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.3;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="actor-whatsapp" target="uc-t1-whatsapp">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1480" y="1130" as="sourcePoint" />
+            <mxPoint x="1220" y="515" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ========== TIER 2 - CASOS DE USO (FAMÍLIA) ========== -->
+
+        <!-- Container Tier 2 -->
+        <mxCell id="container-t2" value="TIER 2 - Família Plus (R$ 23,90/mês) - Casos de Uso Adicionais" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;align=center;fontStyle=1;fontSize=12;opacity=20;" vertex="1" parent="1">
+          <mxGeometry x="200" y="1080" width="1200" height="440" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc-t2-invite" value="Convidar Membro&#xa;Familiar" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1120" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t2-family-profile" value="Gerenciar Perfil&#xa;Familiar" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1210" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t2-allowance" value="Atribuir Mesada&#xa;para Filho" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1300" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t2-split-expense" value="Dividir Despesa&#xa;Familiar" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1390" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc-t2-shared-goal" value="Criar Meta&#xa;Compartilhada" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1120" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t2-notify" value="Enviar Notificação&#xa;Familiar" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1210" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t2-chat" value="Chat Familiar" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1300" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t2-parental" value="Definir Controle&#xa;Parental" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1390" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc-t2-family-dashboard" value="Visualizar Dashboard&#xa;Familiar" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="680" y="1120" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t2-consolidated" value="Gerar Relatório&#xa;Consolidado" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="680" y="1210" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t2-share-card" value="Compartilhar&#xa;Cartão" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="680" y="1300" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t2-spending-rules" value="Definir Regra de&#xa;Gasto por Membro" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="680" y="1390" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Relacionamentos Tier 2 -->
+        <mxCell id="rel-family-invite" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.3;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="actor-family" target="uc-t2-invite">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1140" as="sourcePoint" />
+            <mxPoint x="280" y="1155" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-family-profile" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-family" target="uc-t2-family-profile">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1140" as="sourcePoint" />
+            <mxPoint x="280" y="1245" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-family-allowance" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-family" target="uc-t2-allowance">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1160" as="sourcePoint" />
+            <mxPoint x="280" y="1335" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-family-split" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-family" target="uc-t2-split-expense">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1180" as="sourcePoint" />
+            <mxPoint x="280" y="1425" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-family-goal" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-family" target="uc-t2-shared-goal">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1140" as="sourcePoint" />
+            <mxPoint x="480" y="1155" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-family-notify" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-family" target="uc-t2-notify">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1140" as="sourcePoint" />
+            <mxPoint x="480" y="1245" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-family-chat" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-family" target="uc-t2-chat">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1160" as="sourcePoint" />
+            <mxPoint x="480" y="1335" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-family-parental" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-family" target="uc-t2-parental">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1180" as="sourcePoint" />
+            <mxPoint x="480" y="1425" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-family-dashboard" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-family" target="uc-t2-family-dashboard">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1140" as="sourcePoint" />
+            <mxPoint x="680" y="1155" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-family-consolidated" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-family" target="uc-t2-consolidated">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1140" as="sourcePoint" />
+            <mxPoint x="680" y="1245" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-family-share-card" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-family" target="uc-t2-share-card">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1160" as="sourcePoint" />
+            <mxPoint x="680" y="1335" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-family-rules" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-family" target="uc-t2-spending-rules">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1180" as="sourcePoint" />
+            <mxPoint x="680" y="1425" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ========== TIER 3 - CASOS DE USO (EMPRESARIAL) ========== -->
+
+        <!-- Container Tier 3 -->
+        <mxCell id="container-t3" value="TIER 3 - Business Enterprise (R$ 45,90/mês) - Casos de Uso Adicionais" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;verticalAlign=top;align=center;fontStyle=1;fontSize=12;opacity=20;" vertex="1" parent="1">
+          <mxGeometry x="200" y="1560" width="1200" height="440" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc-t3-business-profile" value="Criar Perfil&#xa;Empresarial" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1600" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t3-dre" value="Gerar DRE&#xa;Automatizada" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1690" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t3-cost-center" value="Gerenciar Centro&#xa;de Custos" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1780" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t3-cashflow" value="Projetar Fluxo&#xa;de Caixa" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1870" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc-t3-client" value="Cadastrar Cliente" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1600" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t3-supplier" value="Cadastrar&#xa;Fornecedor" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1690" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t3-payable" value="Gerenciar Contas&#xa;a Pagar Empresarial" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1780" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t3-receivable" value="Gerenciar Contas&#xa;a Receber Empresarial" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1870" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc-t3-invoice" value="Emitir Nota Fiscal" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="680" y="1600" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t3-tax" value="Calcular Impostos" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="680" y="1690" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t3-fiscal-report" value="Gerar Relatório&#xa;Fiscal" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="680" y="1780" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t3-cnpj" value="Gerenciar CNPJ" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="680" y="1870" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc-t3-reconciliation" value="Conciliação Bancária&#xa;Avançada" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="880" y="1600" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t3-contract" value="Gerenciar Contratos" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="880" y="1690" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-t3-budget" value="Criar Orçamento&#xa;Empresarial" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="880" y="1780" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Relacionamentos Tier 3 -->
+        <mxCell id="rel-business-profile" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.3;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="actor-business" target="uc-t3-business-profile">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1620" as="sourcePoint" />
+            <mxPoint x="280" y="1635" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-business-dre" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-business" target="uc-t3-dre">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1640" as="sourcePoint" />
+            <mxPoint x="280" y="1725" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-business-cost" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-business" target="uc-t3-cost-center">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1660" as="sourcePoint" />
+            <mxPoint x="280" y="1815" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-business-cashflow" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-business" target="uc-t3-cashflow">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1680" as="sourcePoint" />
+            <mxPoint x="280" y="1905" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-business-client" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-business" target="uc-t3-client">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1620" as="sourcePoint" />
+            <mxPoint x="480" y="1635" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-business-supplier" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-business" target="uc-t3-supplier">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1640" as="sourcePoint" />
+            <mxPoint x="480" y="1725" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-business-payable" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-business" target="uc-t3-payable">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1660" as="sourcePoint" />
+            <mxPoint x="480" y="1815" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-business-receivable" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-business" target="uc-t3-receivable">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1680" as="sourcePoint" />
+            <mxPoint x="480" y="1905" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-business-invoice" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-business" target="uc-t3-invoice">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1620" as="sourcePoint" />
+            <mxPoint x="680" y="1635" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-business-tax" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-business" target="uc-t3-tax">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1640" as="sourcePoint" />
+            <mxPoint x="680" y="1725" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-business-fiscal" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-business" target="uc-t3-fiscal-report">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1660" as="sourcePoint" />
+            <mxPoint x="680" y="1815" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-business-cnpj" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-business" target="uc-t3-cnpj">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1680" as="sourcePoint" />
+            <mxPoint x="680" y="1905" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-business-reconciliation" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-business" target="uc-t3-reconciliation">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1620" as="sourcePoint" />
+            <mxPoint x="880" y="1635" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-business-contract" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-business" target="uc-t3-contract">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1640" as="sourcePoint" />
+            <mxPoint x="880" y="1725" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-business-budget" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor-business" target="uc-t3-budget">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="1660" as="sourcePoint" />
+            <mxPoint x="880" y="1815" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

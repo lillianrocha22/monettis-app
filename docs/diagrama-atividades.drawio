@@ -1,0 +1,680 @@
+<mxfile host="app.diagrams.net" agent="Claude Code" version="24.0.0">
+  <diagram name="Atividades - Processos de Negócio" id="activity-main">
+    <mxGraphModel dx="2400" dy="1600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3200" pageHeight="4800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- TÍTULO -->
+        <mxCell id="title" value="Diagrama de Atividades - Monettis App&#xa;Processos de Negócio Organizados por Tiers" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="800" y="20" width="1200" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- LEGENDA -->
+        <mxCell id="legend-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="520" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" value="LEGENDA - TIERS E SÍMBOLOS" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="110" width="500" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-t1" value="🟦 TIER 1 - R$ 14,00/mês - Premium Individual" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="150" width="480" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-t2" value="🟩 TIER 2 - R$ 23,90/mês - Família Plus" style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="185" width="480" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-t3" value="🟧 TIER 3 - R$ 45,90/mês - Business Enterprise" style="text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="220" width="480" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-symbols" value="● Início   ◉ Fim   ◇ Decisão   ▭ Ação   ═ Fork/Join" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="60" y="260" width="480" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-phases" value="Fase 1: Implementado | Fase 2: Planejado (Microsserviços)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="60" y="285" width="480" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ========== ATIVIDADE 1: GESTÃO DE TRANSAÇÕES (TIER 1) ========== -->
+
+        <mxCell id="act1-container" value="ATIVIDADE 1: Gestão de Transações (🟦 Tier 1, 2, 3)" style="swimlane;horizontal=1;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="360" width="900" height="700" as="geometry" />
+        </mxCell>
+
+        <!-- Início -->
+        <mxCell id="act1-start" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;" vertex="1" parent="act1-container">
+          <mxGeometry x="420" y="50" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Ação: Acessar página de transações -->
+        <mxCell id="act1-access" value="Acessar página&#xa;de transações" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="act1-container">
+          <mxGeometry x="365" y="100" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Decisão: Ação desejada -->
+        <mxCell id="act1-decision1" value="Ação&#xa;desejada?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="act1-container">
+          <mxGeometry x="380" y="180" width="110" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Branch: Adicionar -->
+        <mxCell id="act1-add-check" value="Verificar limite&#xa;(Free: 10/mês)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="act1-container">
+          <mxGeometry x="60" y="290" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act1-limit-decision" value="Limite&#xa;atingido?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="act1-container">
+          <mxGeometry x="75" y="370" width="110" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act1-upgrade-msg" value="Exibir mensagem&#xa;'Faça upgrade'" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="act1-container">
+          <mxGeometry x="30" y="470" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act1-open-dialog" value="Abrir dialog&#xa;AddTransaction" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="act1-container">
+          <mxGeometry x="180" y="470" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act1-fill-form" value="Preencher formulário&#xa;(nome, valor, tipo...)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="act1-container">
+          <mxGeometry x="180" y="550" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act1-validate" value="Validar dados&#xa;(Zod Schema)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="act1-container">
+          <mxGeometry x="180" y="620" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Branch: Editar -->
+        <mxCell id="act1-select-edit" value="Selecionar transação&#xa;na tabela" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="act1-container">
+          <mxGeometry x="365" y="290" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act1-edit-dialog" value="Abrir dialog com&#xa;dados preenchidos" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="act1-container">
+          <mxGeometry x="365" y="370" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act1-modify" value="Modificar campos&#xa;desejados" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="act1-container">
+          <mxGeometry x="365" y="450" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Branch: Excluir -->
+        <mxCell id="act1-select-delete" value="Selecionar transação&#xa;para excluir" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="act1-container">
+          <mxGeometry x="690" y="290" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act1-confirm" value="Confirmar&#xa;exclusão?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="act1-container">
+          <mxGeometry x="710" y="370" width="100" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act1-delete" value="deleteTransaction&#xa;(Server Action)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="act1-container">
+          <mxGeometry x="690" y="470" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Join e Salvar -->
+        <mxCell id="act1-upsert" value="upsertTransaction&#xa;(Server Action)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="act1-container">
+          <mxGeometry x="365" y="550" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act1-toast" value="Exibir toast&#xa;de sucesso" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="act1-container">
+          <mxGeometry x="500" y="620" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Fim -->
+        <mxCell id="act1-end" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;strokeWidth=3;" vertex="1" parent="act1-container">
+          <mxGeometry x="545" y="680" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Setas -->
+        <mxCell id="act1-edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act1-container" source="act1-start" target="act1-access">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act1-edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act1-container" source="act1-access" target="act1-decision1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act1-edge3" value="Adicionar" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act1-container" source="act1-decision1" target="act1-add-check">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act1-edge4" value="Editar" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act1-container" source="act1-decision1" target="act1-select-edit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act1-edge5" value="Excluir" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act1-container" source="act1-decision1" target="act1-select-delete">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act1-edge6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act1-container" source="act1-add-check" target="act1-limit-decision">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act1-edge7" value="Sim" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act1-container" source="act1-limit-decision" target="act1-upgrade-msg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act1-edge8" value="Não" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act1-container" source="act1-limit-decision" target="act1-open-dialog">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act1-edge9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act1-container" source="act1-open-dialog" target="act1-fill-form">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act1-edge10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act1-container" source="act1-fill-form" target="act1-validate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act1-edge11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act1-container" source="act1-select-edit" target="act1-edit-dialog">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act1-edge12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act1-container" source="act1-edit-dialog" target="act1-modify">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act1-edge13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act1-container" source="act1-select-delete" target="act1-confirm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act1-edge14" value="Sim" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act1-container" source="act1-confirm" target="act1-delete">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act1-edge15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act1-container" source="act1-validate" target="act1-upsert">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="290" y="645" />
+              <mxPoint x="290" y="575" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="act1-edge16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act1-container" source="act1-modify" target="act1-upsert">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act1-edge17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act1-container" source="act1-upsert" target="act1-toast">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act1-edge18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act1-container" source="act1-delete" target="act1-toast">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="760" y="540" />
+              <mxPoint x="620" y="540" />
+              <mxPoint x="620" y="645" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="act1-edge19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act1-container" source="act1-toast" target="act1-end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ========== ATIVIDADE 2: ASSINATURA DE PLANO ========== -->
+
+        <mxCell id="act2-container" value="ATIVIDADE 2: Assinatura de Plano (Tier 1, 2, 3)" style="swimlane;horizontal=1;startSize=30;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="980" y="360" width="600" height="700" as="geometry" />
+        </mxCell>
+
+        <!-- Início -->
+        <mxCell id="act2-start" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;" vertex="1" parent="act2-container">
+          <mxGeometry x="275" y="50" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act2-access" value="Acessar página&#xa;de assinatura" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="act2-container">
+          <mxGeometry x="220" y="100" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act2-check-sub" value="Verificar&#xa;assinatura atual" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="act2-container">
+          <mxGeometry x="220" y="170" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act2-has-sub" value="Já tem&#xa;assinatura?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="act2-container">
+          <mxGeometry x="230" y="250" width="120" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act2-show-current" value="Exibir plano atual&#xa;e opção de cancelar" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="act2-container">
+          <mxGeometry x="400" y="260" width="150" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act2-select-tier" value="Selecionar tier&#xa;(T1, T2 ou T3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="act2-container">
+          <mxGeometry x="220" y="350" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act2-create-checkout" value="createStripeCheckout&#xa;(Server Action)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="act2-container">
+          <mxGeometry x="220" y="420" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act2-redirect" value="Redirecionar para&#xa;Stripe Checkout" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="act2-container">
+          <mxGeometry x="220" y="490" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act2-payment" value="Preencher dados&#xa;de pagamento" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="act2-container">
+          <mxGeometry x="220" y="560" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act2-webhook" value="Webhook recebe&#xa;checkout.session.completed" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="act2-container">
+          <mxGeometry x="400" y="490" width="160" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act2-update-meta" value="Atualizar Clerk&#xa;metadata (tier)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="act2-container">
+          <mxGeometry x="400" y="560" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act2-success" value="Exibir página&#xa;de sucesso" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="act2-container">
+          <mxGeometry x="310" y="630" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Fim -->
+        <mxCell id="act2-end" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;strokeWidth=3;" vertex="1" parent="act2-container">
+          <mxGeometry x="355" y="700" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Setas -->
+        <mxCell id="act2-edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act2-container" source="act2-start" target="act2-access">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act2-edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act2-container" source="act2-access" target="act2-check-sub">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act2-edge3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act2-container" source="act2-check-sub" target="act2-has-sub">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act2-edge4" value="Sim" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act2-container" source="act2-has-sub" target="act2-show-current">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act2-edge5" value="Não" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act2-container" source="act2-has-sub" target="act2-select-tier">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act2-edge6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act2-container" source="act2-select-tier" target="act2-create-checkout">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act2-edge7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act2-container" source="act2-create-checkout" target="act2-redirect">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act2-edge8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act2-container" source="act2-redirect" target="act2-payment">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act2-edge9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="act2-container" source="act2-payment" target="act2-webhook">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="370" y="585" />
+              <mxPoint x="370" y="515" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="act2-edge10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act2-container" source="act2-webhook" target="act2-update-meta">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act2-edge11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act2-container" source="act2-update-meta" target="act2-success">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act2-edge12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act2-container" source="act2-success" target="act2-end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ========== ATIVIDADE 3: RELATÓRIO IA ========== -->
+
+        <mxCell id="act3-container" value="ATIVIDADE 3: Gerar Relatório IA (🟦 Premium - Tier 1, 2, 3)" style="swimlane;horizontal=1;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1620" y="360" width="600" height="700" as="geometry" />
+        </mxCell>
+
+        <!-- Início -->
+        <mxCell id="act3-start" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;" vertex="1" parent="act3-container">
+          <mxGeometry x="275" y="50" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act3-click" value="Clicar botão&#xa;'Relatório IA'" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="act3-container">
+          <mxGeometry x="220" y="100" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act3-check-premium" value="Verificar se&#xa;tem plano premium" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="act3-container">
+          <mxGeometry x="220" y="170" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act3-is-premium" value="É premium?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="act3-container">
+          <mxGeometry x="235" y="250" width="110" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act3-upgrade" value="Exibir mensagem&#xa;'Assine para usar'" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="act3-container">
+          <mxGeometry x="400" y="260" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act3-check-limit" value="Verificar limite diário&#xa;(5 relatórios/dia)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="act3-container">
+          <mxGeometry x="220" y="350" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act3-limit-ok" value="Limite&#xa;OK?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="act3-container">
+          <mxGeometry x="235" y="420" width="110" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act3-limit-msg" value="Exibir 'Limite&#xa;diário atingido'" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="act3-container">
+          <mxGeometry x="400" y="430" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act3-get-data" value="getDashboard()&#xa;Buscar transações" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="act3-container">
+          <mxGeometry x="220" y="510" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act3-call-ai" value="Chamar OpenAI&#xa;GPT-4o-mini" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="act3-container">
+          <mxGeometry x="220" y="580" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act3-show" value="Exibir relatório&#xa;em dialog (Markdown)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="act3-container">
+          <mxGeometry x="220" y="650" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Fim -->
+        <mxCell id="act3-end" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;strokeWidth=3;" vertex="1" parent="act3-container">
+          <mxGeometry x="275" y="720" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Setas -->
+        <mxCell id="act3-edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act3-container" source="act3-start" target="act3-click">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act3-edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act3-container" source="act3-click" target="act3-check-premium">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act3-edge3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act3-container" source="act3-check-premium" target="act3-is-premium">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act3-edge4" value="Não" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act3-container" source="act3-is-premium" target="act3-upgrade">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act3-edge5" value="Sim" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act3-container" source="act3-is-premium" target="act3-check-limit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act3-edge6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act3-container" source="act3-check-limit" target="act3-limit-ok">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act3-edge7" value="Não" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act3-container" source="act3-limit-ok" target="act3-limit-msg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act3-edge8" value="Sim" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act3-container" source="act3-limit-ok" target="act3-get-data">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act3-edge9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act3-container" source="act3-get-data" target="act3-call-ai">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act3-edge10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act3-container" source="act3-call-ai" target="act3-show">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act3-edge11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act3-container" source="act3-show" target="act3-end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ========== ATIVIDADE 4: GESTÃO FAMILIAR (TIER 2) ========== -->
+
+        <mxCell id="act4-container" value="ATIVIDADE 4: Gestão Familiar (🟩 Tier 2 - Futuro)" style="swimlane;horizontal=1;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1100" width="900" height="650" as="geometry" />
+        </mxCell>
+
+        <!-- Raias (swimlanes internas) -->
+        <mxCell id="act4-lane-titular" value="Titular" style="swimlane;horizontal=0;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="act4-container">
+          <mxGeometry y="40" width="900" height="200" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act4-start" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;" vertex="1" parent="act4-lane-titular">
+          <mxGeometry x="60" y="85" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="act4-access" value="Acessar gestão&#xa;familiar" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="act4-lane-titular">
+          <mxGeometry x="130" y="70" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act4-invite" value="Convidar&#xa;membro" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="act4-lane-titular">
+          <mxGeometry x="290" y="70" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act4-set-role" value="Definir role&#xa;e permissões" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="act4-lane-titular">
+          <mxGeometry x="430" y="70" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act4-send-invite" value="Enviar convite&#xa;por email" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="act4-lane-titular">
+          <mxGeometry x="570" y="70" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act4-manage" value="Gerenciar mesadas&#xa;e regras" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="act4-lane-titular">
+          <mxGeometry x="720" y="70" width="130" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act4-lane-membro" value="Membro" style="swimlane;horizontal=0;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="act4-container">
+          <mxGeometry y="240" width="900" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act4-receive" value="Receber email&#xa;de convite" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="act4-lane-membro">
+          <mxGeometry x="130" y="65" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act4-accept" value="Aceitar&#xa;convite" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="act4-lane-membro">
+          <mxGeometry x="290" y="65" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act4-create-acc" value="Criar conta ou&#xa;vincular existente" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="act4-lane-membro">
+          <mxGeometry x="430" y="65" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act4-view" value="Visualizar dashboard&#xa;familiar" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="act4-lane-membro">
+          <mxGeometry x="590" y="65" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act4-add-trans" value="Adicionar transações&#xa;(com limites)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="act4-lane-membro">
+          <mxGeometry x="760" y="65" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act4-lane-sistema" value="Sistema" style="swimlane;horizontal=0;startSize=30;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="act4-container">
+          <mxGeometry y="420" width="900" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act4-validate-invite" value="Validar token&#xa;de convite" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="act4-lane-sistema">
+          <mxGeometry x="290" y="65" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act4-create-member" value="Criar FamilyMember&#xa;vinculado" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="act4-lane-sistema">
+          <mxGeometry x="430" y="65" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act4-notify" value="Notificar titular&#xa;do novo membro" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="act4-lane-sistema">
+          <mxGeometry x="590" y="65" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act4-end" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;strokeWidth=3;" vertex="1" parent="act4-lane-sistema">
+          <mxGeometry x="805" y="75" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Setas entre raias -->
+        <mxCell id="act4-edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act4-container" source="act4-start" target="act4-access">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act4-edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act4-container" source="act4-access" target="act4-invite">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act4-edge3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act4-container" source="act4-invite" target="act4-set-role">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act4-edge4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act4-container" source="act4-set-role" target="act4-send-invite">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act4-edge5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act4-container" source="act4-send-invite" target="act4-receive">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="625" y="200" />
+              <mxPoint x="185" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="act4-edge6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act4-container" source="act4-receive" target="act4-accept">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act4-edge7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act4-container" source="act4-accept" target="act4-validate-invite">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act4-edge8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act4-container" source="act4-validate-invite" target="act4-create-acc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act4-edge9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act4-container" source="act4-create-acc" target="act4-create-member">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act4-edge10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act4-container" source="act4-create-member" target="act4-notify">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act4-edge11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act4-container" source="act4-notify" target="act4-view">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act4-edge12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act4-container" source="act4-view" target="act4-add-trans">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act4-edge13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act4-container" source="act4-add-trans" target="act4-end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act4-edge14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act4-container" source="act4-send-invite" target="act4-manage">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ========== ATIVIDADE 5: GESTÃO EMPRESARIAL (TIER 3) ========== -->
+
+        <mxCell id="act5-container" value="ATIVIDADE 5: Gestão Empresarial (🟧 Tier 3 - Futuro)" style="swimlane;horizontal=1;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="980" y="1100" width="1240" height="650" as="geometry" />
+        </mxCell>
+
+        <!-- Início -->
+        <mxCell id="act5-start" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;" vertex="1" parent="act5-container">
+          <mxGeometry x="60" y="60" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Fork para processos paralelos -->
+        <mxCell id="act5-fork" value="" style="line;strokeWidth=2;html=1;fillColor=#000000;" vertex="1" parent="act5-container">
+          <mxGeometry x="130" y="70" width="100" height="10" as="geometry" />
+        </mxCell>
+
+        <!-- Branch: Perfil Empresarial -->
+        <mxCell id="act5-profile-label" value="Perfil Empresarial" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1" vertex="1" parent="act5-container">
+          <mxGeometry x="60" y="110" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-create-profile" value="Cadastrar CNPJ&#xa;e dados empresa" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="act5-container">
+          <mxGeometry x="50" y="140" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-select-regime" value="Selecionar regime&#xa;tributário" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="act5-container">
+          <mxGeometry x="50" y="210" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-cost-centers" value="Configurar centros&#xa;de custo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="act5-container">
+          <mxGeometry x="50" y="280" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Branch: Clientes/Fornecedores -->
+        <mxCell id="act5-cf-label" value="Clientes/Fornecedores" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1" vertex="1" parent="act5-container">
+          <mxGeometry x="220" y="110" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-add-client" value="Cadastrar&#xa;cliente" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="act5-container">
+          <mxGeometry x="210" y="140" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-add-supplier" value="Cadastrar&#xa;fornecedor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="act5-container">
+          <mxGeometry x="330" y="140" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-contracts" value="Gerenciar&#xa;contratos" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="act5-container">
+          <mxGeometry x="260" y="210" width="110" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Branch: Faturamento -->
+        <mxCell id="act5-inv-label" value="Faturamento" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1" vertex="1" parent="act5-container">
+          <mxGeometry x="480" y="110" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-create-invoice" value="Criar nota fiscal&#xa;de serviço" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="act5-container">
+          <mxGeometry x="470" y="140" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-send-nfse" value="Enviar para&#xa;API NFSe" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="act5-container">
+          <mxGeometry x="470" y="210" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-nfse-status" value="Autorizada?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="act5-container">
+          <mxGeometry x="475" y="280" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-retry" value="Reprocessar&#xa;ou corrigir" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="act5-container">
+          <mxGeometry x="610" y="285" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-save-invoice" value="Salvar NF&#xa;autorizada" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="act5-container">
+          <mxGeometry x="470" y="360" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Branch: Relatórios Fiscais -->
+        <mxCell id="act5-fiscal-label" value="Relatórios Fiscais" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1" vertex="1" parent="act5-container">
+          <mxGeometry x="760" y="110" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-dre" value="Gerar DRE&#xa;(Demonstrativo)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="act5-container">
+          <mxGeometry x="750" y="140" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-taxes" value="Calcular impostos&#xa;do período" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="act5-container">
+          <mxGeometry x="750" y="210" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-cashflow" value="Projeção de&#xa;fluxo de caixa" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="act5-container">
+          <mxGeometry x="750" y="280" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Branch: Conciliação -->
+        <mxCell id="act5-recon-label" value="Conciliação" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1" vertex="1" parent="act5-container">
+          <mxGeometry x="920" y="110" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-import-ext" value="Importar extrato&#xa;bancário" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="act5-container">
+          <mxGeometry x="910" y="140" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-match" value="Conciliar com&#xa;transações internas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="act5-container">
+          <mxGeometry x="910" y="210" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-resolve" value="Resolver&#xa;divergências" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="act5-container">
+          <mxGeometry x="910" y="280" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Branch: Orçamento -->
+        <mxCell id="act5-budget-label" value="Orçamento" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1" vertex="1" parent="act5-container">
+          <mxGeometry x="1090" y="110" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-create-budget" value="Criar orçamento&#xa;por centro de custo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="act5-container">
+          <mxGeometry x="1070" y="140" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-track" value="Acompanhar&#xa;execução" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="act5-container">
+          <mxGeometry x="1080" y="210" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-alerts" value="Alertas de&#xa;desvio" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="act5-container">
+          <mxGeometry x="1080" y="280" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Join -->
+        <mxCell id="act5-join" value="" style="line;strokeWidth=2;html=1;fillColor=#000000;" vertex="1" parent="act5-container">
+          <mxGeometry x="300" y="460" width="700" height="10" as="geometry" />
+        </mxCell>
+
+        <!-- Fim -->
+        <mxCell id="act5-dashboard" value="Dashboard&#xa;empresarial unificado" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="act5-container">
+          <mxGeometry x="555" y="500" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-end" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;strokeWidth=3;" vertex="1" parent="act5-container">
+          <mxGeometry x="610" y="580" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Setas principais -->
+        <mxCell id="act5-edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act5-container" source="act5-start" target="act5-fork">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act5-container" source="act5-create-profile" target="act5-select-regime">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-edge3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act5-container" source="act5-select-regime" target="act5-cost-centers">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-edge4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act5-container" source="act5-contracts" target="act5-create-invoice">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-edge5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act5-container" source="act5-create-invoice" target="act5-send-nfse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-edge6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act5-container" source="act5-send-nfse" target="act5-nfse-status">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-edge7" value="Não" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act5-container" source="act5-nfse-status" target="act5-retry">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-edge8" value="Sim" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act5-container" source="act5-nfse-status" target="act5-save-invoice">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-edge9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act5-container" source="act5-dre" target="act5-taxes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-edge10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act5-container" source="act5-taxes" target="act5-cashflow">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-edge11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act5-container" source="act5-import-ext" target="act5-match">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-edge12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act5-container" source="act5-match" target="act5-resolve">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-edge13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act5-container" source="act5-create-budget" target="act5-track">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-edge14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act5-container" source="act5-track" target="act5-alerts">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-edge15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act5-container" source="act5-join" target="act5-dashboard">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act5-edge16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="act5-container" source="act5-dashboard" target="act5-end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Notas -->
+        <mxCell id="notes" value="NOTAS:&#xa;&#xa;• Atividades 1-3: Implementadas (Fase 1)&#xa;• Atividade 4: Planejada (Tier 2 - Família Plus)&#xa;• Atividade 5: Planejada (Tier 3 - Business Enterprise)&#xa;• Cores: 🟦 T1 (Azul), 🟩 T2 (Verde), 🟧 T3 (Laranja)&#xa;• Vermelho: Serviços externos (Stripe, OpenAI, Email, NFSe)&#xa;• Roxo: Camada de sistema/backend" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=10;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="40" y="1790" width="600" height="140" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

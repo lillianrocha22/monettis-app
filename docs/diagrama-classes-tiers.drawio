@@ -1,0 +1,497 @@
+<mxfile host="app.diagrams.net" agent="Claude Code" version="24.0.0">
+  <diagram name="Classes - Tiers" id="class-tiers">
+    <mxGraphModel dx="1800" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="3200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- TÍTULO -->
+        <mxCell id="title" value="Diagrama de Classes - Monettis App&#xa;Arquitetura em Camadas Organizada por Tiers de Versão" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="600" y="20" width="1200" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- LEGENDA -->
+        <mxCell id="legend-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="520" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" value="LEGENDA - ARQUITETURA E TIERS" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="110" width="500" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-t1" value="🟦 TIER 1 - R$ 14,00/mês - Premium Individual" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="150" width="480" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-t1-desc" value="9 classes de domínio + 5 repositórios + 9 serviços + 4 integrações externas + 9 páginas" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="178" width="460" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-t2" value="🟩 TIER 2 - R$ 23,90/mês - Família Plus" style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="210" width="480" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-t2-desc" value="6 classes de domínio adicionais + 4 repositórios + 5 serviços + 6 páginas" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="238" width="460" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-t3" value="🟧 TIER 3 - R$ 45,90/mês - Business Enterprise" style="text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="270" width="480" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-t3-desc" value="8 classes de domínio adicionais + 6 repositórios + 11 serviços + 11 páginas" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="298" width="460" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-arch" value="CAMADAS ARQUITETURAIS" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="335" width="480" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-arch-domain" value="Domain Layer: Entidades e regras de negócio" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="360" width="460" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-arch-data" value="Data Access Layer: Repositórios e acesso ao banco (Prisma)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="378" width="460" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-arch-business" value="Business Logic Layer: Serviços e lógica de aplicação" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="396" width="460" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-arch-external" value="External Services Layer: Integrações com Clerk, Stripe, OpenAI, WhatsApp" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="414" width="460" height="15" as="geometry" />
+        </mxCell>
+
+        <!-- ========== CAMADA 1: DOMAIN LAYER ========== -->
+
+        <mxCell id="layer-domain-title" value="DOMAIN LAYER - Entidades e Enums" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;align=center;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="480" width="2320" height="580" as="geometry" />
+        </mxCell>
+
+        <!-- TIER 1 Domain Classes -->
+        <mxCell id="domain-t1-transaction" value="&lt;&lt;Entity&gt;&gt;&#xa;Transaction&#xa;────────&#xa;+ id: String&#xa;+ name: String&#xa;+ type: TransactionType&#xa;+ amount: Decimal&#xa;+ category: TransactionCategory&#xa;+ paymentMethod: TransactionPaymentMethod&#xa;+ date: DateTime&#xa;+ userId: String&#xa;+ familyMemberId?: String (T2)&#xa;+ businessProfileId?: String (T3)&#xa;+ costCenterId?: String (T3)&#xa;+ clientId?: String (T3)&#xa;+ supplierId?: String (T3)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="80" y="540" width="240" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="domain-t1-creditcard" value="&lt;&lt;Entity&gt;&gt;&#xa;CreditCard&#xa;────────&#xa;+ id: String&#xa;+ name: String&#xa;+ lastFourDigits: String&#xa;+ brand: String&#xa;+ limit: Decimal&#xa;+ closingDay: Int&#xa;+ dueDay: Int&#xa;+ userId: String" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="360" y="540" width="200" height="120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="domain-t1-bankaccount" value="&lt;&lt;Entity&gt;&gt;&#xa;BankAccount&#xa;────────&#xa;+ id: String&#xa;+ name: String&#xa;+ bank: String&#xa;+ accountNumber: String&#xa;+ balance: Decimal&#xa;+ userId: String" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="600" y="540" width="180" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="domain-t1-goal" value="&lt;&lt;Entity&gt;&gt;&#xa;Goal&#xa;────────&#xa;+ id: String&#xa;+ name: String&#xa;+ targetAmount: Decimal&#xa;+ currentAmount: Decimal&#xa;+ deadline: DateTime&#xa;+ userId: String" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="820" y="540" width="180" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="domain-t1-bill" value="&lt;&lt;Entity&gt;&gt;&#xa;RecurringBill&#xa;────────&#xa;+ id: String&#xa;+ name: String&#xa;+ amount: Decimal&#xa;+ dueDay: Int&#xa;+ category: TransactionCategory&#xa;+ isActive: Boolean&#xa;+ userId: String" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="540" width="200" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="domain-t1-enums" value="&lt;&lt;Enum&gt;&gt; TransactionType&#xa;────────&#xa;DEPOSIT | EXPENSE | INVESTMENT&#xa;&#xa;&lt;&lt;Enum&gt;&gt; TransactionCategory&#xa;────────&#xa;HOUSING | TRANSPORTATION | FOOD&#xa;ENTERTAINMENT | HEALTH | UTILITY&#xa;SALARY | EDUCATION | OTHER&#xa;&#xa;&lt;&lt;Enum&gt;&gt; TransactionPaymentMethod&#xa;────────&#xa;CREDIT_CARD | DEBIT_CARD&#xa;BANK_TRANSFER | BANK_SLIP&#xa;CASH | PIX | OTHER" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="80" y="750" width="240" height="180" as="geometry" />
+        </mxCell>
+
+        <!-- TIER 2 Domain Classes -->
+        <mxCell id="domain-t2-familymember" value="&lt;&lt;Entity&gt;&gt; 🟩 TIER 2&#xa;FamilyMember&#xa;────────&#xa;+ id: String&#xa;+ name: String&#xa;+ email: String&#xa;+ role: FamilyRole&#xa;+ userId: String&#xa;+ parentUserId: String" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="360" y="690" width="200" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="domain-t2-familygoal" value="&lt;&lt;Entity&gt;&gt; 🟩 TIER 2&#xa;FamilyGoal&#xa;────────&#xa;+ id: String&#xa;+ name: String&#xa;+ targetAmount: Decimal&#xa;+ currentAmount: Decimal&#xa;+ contributors: String[]&#xa;+ deadline: DateTime" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="600" y="670" width="180" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="domain-t2-allowance" value="&lt;&lt;Entity&gt;&gt; 🟩 TIER 2&#xa;Allowance&#xa;────────&#xa;+ id: String&#xa;+ familyMemberId: String&#xa;+ amount: Decimal&#xa;+ frequency: String&#xa;+ nextPaymentDate: DateTime" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="820" y="670" width="180" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="domain-t2-expensesplit" value="&lt;&lt;Entity&gt;&gt; 🟩 TIER 2&#xa;ExpenseSplit&#xa;────────&#xa;+ id: String&#xa;+ transactionId: String&#xa;+ splits: SplitDetail[]&#xa;+ totalAmount: Decimal" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="360" y="820" width="180" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="domain-t2-parental" value="&lt;&lt;Entity&gt;&gt; 🟩 TIER 2&#xa;ParentalControl&#xa;────────&#xa;+ id: String&#xa;+ familyMemberId: String&#xa;+ restrictions: Restriction[]&#xa;+ spendingLimit: Decimal" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="580" y="820" width="180" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="domain-t2-spendingrule" value="&lt;&lt;Entity&gt;&gt; 🟩 TIER 2&#xa;SpendingRule&#xa;────────&#xa;+ id: String&#xa;+ familyMemberId: String&#xa;+ category: TransactionCategory&#xa;+ maxAmount: Decimal&#xa;+ period: String" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="800" y="820" width="200" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- TIER 3 Domain Classes -->
+        <mxCell id="domain-t3-businessprofile" value="&lt;&lt;Entity&gt;&gt; 🟧 TIER 3&#xa;BusinessProfile&#xa;────────&#xa;+ id: String&#xa;+ cnpj: String&#xa;+ companyName: String&#xa;+ tradeName: String&#xa;+ taxRegime: String&#xa;+ userId: String" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="540" width="180" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="domain-t3-costcenter" value="&lt;&lt;Entity&gt;&gt; 🟧 TIER 3&#xa;CostCenter&#xa;────────&#xa;+ id: String&#xa;+ name: String&#xa;+ code: String&#xa;+ budget: Decimal&#xa;+ businessProfileId: String" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1500" y="540" width="180" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="domain-t3-client" value="&lt;&lt;Entity&gt;&gt; 🟧 TIER 3&#xa;Client&#xa;────────&#xa;+ id: String&#xa;+ name: String&#xa;+ document: String&#xa;+ email: String&#xa;+ phone: String&#xa;+ businessProfileId: String" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1720" y="540" width="180" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="domain-t3-supplier" value="&lt;&lt;Entity&gt;&gt; 🟧 TIER 3&#xa;Supplier&#xa;────────&#xa;+ id: String&#xa;+ name: String&#xa;+ document: String&#xa;+ email: String&#xa;+ phone: String&#xa;+ businessProfileId: String" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1940" y="540" width="180" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="domain-t3-invoice" value="&lt;&lt;Entity&gt;&gt; 🟧 TIER 3&#xa;Invoice&#xa;────────&#xa;+ id: String&#xa;+ number: String&#xa;+ type: InvoiceType&#xa;+ amount: Decimal&#xa;+ issueDate: DateTime&#xa;+ clientId?: String&#xa;+ supplierId?: String&#xa;+ businessProfileId: String" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="670" width="200" height="130" as="geometry" />
+        </mxCell>
+
+        <mxCell id="domain-t3-contract" value="&lt;&lt;Entity&gt;&gt; 🟧 TIER 3&#xa;Contract&#xa;────────&#xa;+ id: String&#xa;+ title: String&#xa;+ value: Decimal&#xa;+ startDate: DateTime&#xa;+ endDate: DateTime&#xa;+ clientId?: String&#xa;+ supplierId?: String&#xa;+ businessProfileId: String" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1520" y="670" width="200" height="130" as="geometry" />
+        </mxCell>
+
+        <mxCell id="domain-t3-tax" value="&lt;&lt;Entity&gt;&gt; 🟧 TIER 3&#xa;TaxCalculation&#xa;────────&#xa;+ id: String&#xa;+ period: String&#xa;+ taxType: String&#xa;+ baseAmount: Decimal&#xa;+ taxAmount: Decimal&#xa;+ businessProfileId: String" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1760" y="670" width="180" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="domain-t3-cashflow" value="&lt;&lt;Entity&gt;&gt; 🟧 TIER 3&#xa;CashFlowProjection&#xa;────────&#xa;+ id: String&#xa;+ date: DateTime&#xa;+ expectedInflow: Decimal&#xa;+ expectedOutflow: Decimal&#xa;+ projectedBalance: Decimal&#xa;+ businessProfileId: String" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="830" width="200" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- ========== CAMADA 2: DATA ACCESS LAYER ========== -->
+
+        <mxCell id="layer-data-title" value="DATA ACCESS LAYER - Repositórios (Prisma ORM)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;align=center;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1100" width="2320" height="360" as="geometry" />
+        </mxCell>
+
+        <!-- TIER 1 Repositories -->
+        <mxCell id="data-t1-prisma" value="&lt;&lt;Service&gt;&gt;&#xa;PrismaClient&#xa;────────&#xa;+ transaction: TransactionDelegate&#xa;+ creditCard: CreditCardDelegate&#xa;+ bankAccount: BankAccountDelegate&#xa;+ goal: GoalDelegate&#xa;+ recurringBill: RecurringBillDelegate&#xa;────────&#xa;+ $connect(): Promise&lt;void&gt;&#xa;+ $disconnect(): Promise&lt;void&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1160" width="280" height="140" as="geometry" />
+        </mxCell>
+
+        <mxCell id="data-t1-transaction-repo" value="&lt;&lt;Repository&gt;&gt;&#xa;TransactionRepository&#xa;────────&#xa;+ create(data): Promise&lt;Transaction&gt;&#xa;+ findById(id): Promise&lt;Transaction&gt;&#xa;+ findByUserId(userId): Promise&lt;Transaction[]&gt;&#xa;+ update(id, data): Promise&lt;Transaction&gt;&#xa;+ delete(id): Promise&lt;void&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="400" y="1160" width="280" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="data-t1-card-repo" value="&lt;&lt;Repository&gt;&gt;&#xa;CreditCardRepository&#xa;────────&#xa;+ create(data): Promise&lt;CreditCard&gt;&#xa;+ findByUserId(userId): Promise&lt;CreditCard[]&gt;&#xa;+ update(id, data): Promise&lt;CreditCard&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="720" y="1160" width="280" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="data-t1-account-repo" value="&lt;&lt;Repository&gt;&gt;&#xa;BankAccountRepository&#xa;────────&#xa;+ create(data): Promise&lt;BankAccount&gt;&#xa;+ findByUserId(userId): Promise&lt;BankAccount[]&gt;&#xa;+ updateBalance(id, balance): Promise&lt;BankAccount&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="1160" width="300" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="data-t1-goal-repo" value="&lt;&lt;Repository&gt;&gt;&#xa;GoalRepository&#xa;────────&#xa;+ create(data): Promise&lt;Goal&gt;&#xa;+ findByUserId(userId): Promise&lt;Goal[]&gt;&#xa;+ updateProgress(id, amount): Promise&lt;Goal&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1330" width="280" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- TIER 2 Repositories -->
+        <mxCell id="data-t2-family-repo" value="&lt;&lt;Repository&gt;&gt; 🟩 TIER 2&#xa;FamilyMemberRepository&#xa;────────&#xa;+ create(data): Promise&lt;FamilyMember&gt;&#xa;+ findByUserId(userId): Promise&lt;FamilyMember[]&gt;&#xa;+ findById(id): Promise&lt;FamilyMember&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="400" y="1280" width="280" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="data-t2-allowance-repo" value="&lt;&lt;Repository&gt;&gt; 🟩 TIER 2&#xa;AllowanceRepository&#xa;────────&#xa;+ create(data): Promise&lt;Allowance&gt;&#xa;+ findByMemberId(id): Promise&lt;Allowance[]&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="720" y="1280" width="280" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="data-t2-split-repo" value="&lt;&lt;Repository&gt;&gt; 🟩 TIER 2&#xa;ExpenseSplitRepository&#xa;────────&#xa;+ create(data): Promise&lt;ExpenseSplit&gt;&#xa;+ findByTransactionId(id): Promise&lt;ExpenseSplit&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="1280" width="300" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="data-t2-familygoal-repo" value="&lt;&lt;Repository&gt;&gt; 🟩 TIER 2&#xa;FamilyGoalRepository&#xa;────────&#xa;+ create(data): Promise&lt;FamilyGoal&gt;&#xa;+ findByUserId(userId): Promise&lt;FamilyGoal[]&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="400" y="1390" width="280" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- TIER 3 Repositories -->
+        <mxCell id="data-t3-business-repo" value="&lt;&lt;Repository&gt;&gt; 🟧 TIER 3&#xa;BusinessProfileRepository&#xa;────────&#xa;+ create(data): Promise&lt;BusinessProfile&gt;&#xa;+ findByUserId(userId): Promise&lt;BusinessProfile[]&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="1160" width="280" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="data-t3-client-repo" value="&lt;&lt;Repository&gt;&gt; 🟧 TIER 3&#xa;ClientRepository&#xa;────────&#xa;+ create(data): Promise&lt;Client&gt;&#xa;+ findByBusinessId(id): Promise&lt;Client[]&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1720" y="1160" width="280" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="data-t3-supplier-repo" value="&lt;&lt;Repository&gt;&gt; 🟧 TIER 3&#xa;SupplierRepository&#xa;────────&#xa;+ create(data): Promise&lt;Supplier&gt;&#xa;+ findByBusinessId(id): Promise&lt;Supplier[]&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="2040" y="1160" width="280" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="data-t3-invoice-repo" value="&lt;&lt;Repository&gt;&gt; 🟧 TIER 3&#xa;InvoiceRepository&#xa;────────&#xa;+ create(data): Promise&lt;Invoice&gt;&#xa;+ findByBusinessId(id): Promise&lt;Invoice[]&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="1270" width="280" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="data-t3-costcenter-repo" value="&lt;&lt;Repository&gt;&gt; 🟧 TIER 3&#xa;CostCenterRepository&#xa;────────&#xa;+ create(data): Promise&lt;CostCenter&gt;&#xa;+ findByBusinessId(id): Promise&lt;CostCenter[]&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1720" y="1270" width="280" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="data-t3-contract-repo" value="&lt;&lt;Repository&gt;&gt; 🟧 TIER 3&#xa;ContractRepository&#xa;────────&#xa;+ create(data): Promise&lt;Contract&gt;&#xa;+ findByBusinessId(id): Promise&lt;Contract[]&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="2040" y="1270" width="280" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ========== CAMADA 3: BUSINESS LOGIC LAYER ========== -->
+
+        <mxCell id="layer-business-title" value="BUSINESS LOGIC LAYER - Serviços e Lógica de Aplicação" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;align=center;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1500" width="2320" height="420" as="geometry" />
+        </mxCell>
+
+        <!-- TIER 1 Services -->
+        <mxCell id="service-t1-transaction" value="&lt;&lt;Service&gt;&gt;&#xa;TransactionService&#xa;────────&#xa;+ createTransaction(data)&#xa;+ getTransactions(userId, filters)&#xa;+ updateTransaction(id, data)&#xa;+ deleteTransaction(id)&#xa;+ calculateTotals(transactions)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1560" width="240" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="service-t1-import" value="&lt;&lt;Service&gt;&gt;&#xa;ImportService&#xa;────────&#xa;+ importBankStatement(file, userId)&#xa;+ importCreditCardInvoice(file, userId)&#xa;+ parseOFX(file)&#xa;+ parseCSV(file)&#xa;+ createTransactionsFromImport(data)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="360" y="1560" width="260" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="service-t1-card" value="&lt;&lt;Service&gt;&gt;&#xa;CreditCardService&#xa;────────&#xa;+ createCard(data, userId)&#xa;+ getCards(userId)&#xa;+ updateCard(id, data)&#xa;+ calculateCurrentInvoice(cardId)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="660" y="1560" width="240" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="service-t1-account" value="&lt;&lt;Service&gt;&gt;&#xa;BankAccountService&#xa;────────&#xa;+ createAccount(data, userId)&#xa;+ getAccounts(userId)&#xa;+ updateBalance(accountId, balance)&#xa;+ getTotalBalance(userId)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="940" y="1560" width="240" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="service-t1-goal" value="&lt;&lt;Service&gt;&gt;&#xa;GoalService&#xa;────────&#xa;+ createGoal(data, userId)&#xa;+ getGoals(userId)&#xa;+ updateProgress(goalId, amount)&#xa;+ calculateProgress(goal)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1700" width="220" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="service-t1-whatsapp" value="&lt;&lt;Service&gt;&gt;&#xa;WhatsAppService&#xa;────────&#xa;+ sendNotification(userId, message)&#xa;+ sendTransactionAlert(transaction)&#xa;+ sendGoalReminder(goal)&#xa;+ sendBillReminder(bill)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="340" y="1700" width="240" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="service-t1-ai" value="&lt;&lt;Service&gt;&gt;&#xa;AIReportService&#xa;────────&#xa;+ generateFinancialReport(userId, period)&#xa;+ analyzeSpendingPatterns(transactions)&#xa;+ provideSuggestions(analysis)&#xa;+ formatReport(data)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="620" y="1700" width="260" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="service-t1-dashboard" value="&lt;&lt;Service&gt;&gt;&#xa;DashboardService&#xa;────────&#xa;+ getDashboardData(userId)&#xa;+ getMonthlyOverview(userId, month)&#xa;+ getCategoryBreakdown(userId, period)&#xa;+ getTrends(userId)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="920" y="1700" width="260" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="service-t1-subscription" value="&lt;&lt;Service&gt;&gt;&#xa;SubscriptionService&#xa;────────&#xa;+ createSubscription(userId, tier)&#xa;+ updateSubscription(userId, newTier)&#xa;+ cancelSubscription(userId)&#xa;+ checkFeatureAccess(userId, feature)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1830" width="260" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- TIER 2 Services -->
+        <mxCell id="service-t2-family" value="&lt;&lt;Service&gt;&gt; 🟩 TIER 2&#xa;FamilyService&#xa;────────&#xa;+ inviteFamilyMember(userId, email)&#xa;+ acceptInvitation(token)&#xa;+ getFamilyMembers(userId)&#xa;+ updateMemberRole(memberId, role)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="380" y="1830" width="240" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="service-t2-allowance" value="&lt;&lt;Service&gt;&gt; 🟩 TIER 2&#xa;AllowanceService&#xa;────────&#xa;+ createAllowance(data)&#xa;+ processPayment(allowanceId)&#xa;+ getAllowanceHistory(memberId)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="660" y="1830" width="220" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="service-t2-split" value="&lt;&lt;Service&gt;&gt; 🟩 TIER 2&#xa;ExpenseSplitService&#xa;────────&#xa;+ splitExpense(transactionId, splits)&#xa;+ calculateSplits(amount, members)&#xa;+ notifyMembers(split)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="920" y="1830" width="240" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="service-t2-parental" value="&lt;&lt;Service&gt;&gt; 🟩 TIER 2&#xa;ParentalControlService&#xa;────────&#xa;+ setRestrictions(memberId, rules)&#xa;+ validateTransaction(memberId, trans)&#xa;+ getControlSettings(memberId)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="1700" width="240" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="service-t2-chat" value="&lt;&lt;Service&gt;&gt; 🟩 TIER 2&#xa;FamilyChatService&#xa;────────&#xa;+ sendMessage(userId, message)&#xa;+ getMessages(userId)&#xa;+ createChatRoom(familyId)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="1830" width="220" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- TIER 3 Services -->
+        <mxCell id="service-t3-business" value="&lt;&lt;Service&gt;&gt; 🟧 TIER 3&#xa;BusinessProfileService&#xa;────────&#xa;+ createBusinessProfile(data, userId)&#xa;+ getBusinessProfiles(userId)&#xa;+ updateBusinessProfile(id, data)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="1560" width="240" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="service-t3-dre" value="&lt;&lt;Service&gt;&gt; 🟧 TIER 3&#xa;DREService&#xa;────────&#xa;+ generateDRE(businessId, period)&#xa;+ calculateRevenue(transactions)&#xa;+ calculateExpenses(transactions)&#xa;+ calculateProfit(revenue, expenses)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1760" y="1560" width="260" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="service-t3-costcenter" value="&lt;&lt;Service&gt;&gt; 🟧 TIER 3&#xa;CostCenterService&#xa;────────&#xa;+ createCostCenter(data, businessId)&#xa;+ getCostCenters(businessId)&#xa;+ allocateTransaction(transId, centerId)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="2060" y="1560" width="260" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="service-t3-client" value="&lt;&lt;Service&gt;&gt; 🟧 TIER 3&#xa;ClientService&#xa;────────&#xa;+ createClient(data, businessId)&#xa;+ getClients(businessId)&#xa;+ updateClient(id, data)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="1680" width="220" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="service-t3-supplier" value="&lt;&lt;Service&gt;&gt; 🟧 TIER 3&#xa;SupplierService&#xa;────────&#xa;+ createSupplier(data, businessId)&#xa;+ getSuppliers(businessId)&#xa;+ updateSupplier(id, data)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1740" y="1680" width="240" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="service-t3-invoice" value="&lt;&lt;Service&gt;&gt; 🟧 TIER 3&#xa;InvoiceService&#xa;────────&#xa;+ issueInvoice(data, businessId)&#xa;+ getInvoices(businessId)&#xa;+ cancelInvoice(id)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="2020" y="1680" width="220" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="service-t3-tax" value="&lt;&lt;Service&gt;&gt; 🟧 TIER 3&#xa;TaxService&#xa;────────&#xa;+ calculateTaxes(businessId, period)&#xa;+ generateTaxReport(businessId, period)&#xa;+ getTaxObligations(businessId)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="1800" width="260" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="service-t3-cashflow" value="&lt;&lt;Service&gt;&gt; 🟧 TIER 3&#xa;CashFlowService&#xa;────────&#xa;+ projectCashFlow(businessId, months)&#xa;+ getProjections(businessId)&#xa;+ updateProjection(id, data)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1780" y="1800" width="240" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="service-t3-reconciliation" value="&lt;&lt;Service&gt;&gt; 🟧 TIER 3&#xa;ReconciliationService&#xa;────────&#xa;+ reconcileAccount(accountId, period)&#xa;+ matchTransactions(bank, system)&#xa;+ generateReconciliationReport(id)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="2060" y="1800" width="260" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="service-t3-contract" value="&lt;&lt;Service&gt;&gt; 🟧 TIER 3&#xa;ContractService&#xa;────────&#xa;+ createContract(data, businessId)&#xa;+ getContracts(businessId)&#xa;+ trackDeadlines(businessId)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="1920" width="240" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="service-t3-budget" value="&lt;&lt;Service&gt;&gt; 🟧 TIER 3&#xa;BudgetService&#xa;────────&#xa;+ createBudget(data, businessId)&#xa;+ getBudgets(businessId)&#xa;+ trackBudgetExecution(budgetId)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1760" y="1920" width="240" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- ========== CAMADA 4: EXTERNAL SERVICES LAYER ========== -->
+
+        <mxCell id="layer-external-title" value="EXTERNAL SERVICES LAYER - Integrações com Serviços Externos" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;align=center;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1960" width="2320" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="external-clerk" value="&lt;&lt;External Service&gt;&gt;&#xa;ClerkAuthService&#xa;────────&#xa;+ authenticateUser(credentials)&#xa;+ getUserMetadata(userId)&#xa;+ updateUserMetadata(userId, data)&#xa;+ validateSession(token)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="100" y="2020" width="260" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="external-stripe" value="&lt;&lt;External Service&gt;&gt;&#xa;StripePaymentService&#xa;────────&#xa;+ createCustomer(userId)&#xa;+ createSubscription(customerId, priceId)&#xa;+ cancelSubscription(subscriptionId)&#xa;+ handleWebhook(event)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="420" y="2020" width="280" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="external-openai" value="&lt;&lt;External Service&gt;&gt;&#xa;OpenAIService&#xa;────────&#xa;+ generateFinancialReport(data)&#xa;+ analyzeTransactions(transactions)&#xa;+ provideSuggestions(analysis)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="760" y="2020" width="260" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="external-whatsapp" value="&lt;&lt;External Service&gt;&gt;&#xa;WhatsAppAPIService&#xa;────────&#xa;+ sendMessage(phone, message)&#xa;+ sendTemplate(phone, template, params)&#xa;+ validatePhone(phone)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="2020" width="260" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- ========== CAMADA 5: PRESENTATION LAYER ========== -->
+
+        <mxCell id="layer-presentation-title" value="PRESENTATION LAYER - Páginas e Componentes React (Next.js 14 App Router)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;align=center;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="2180" width="2320" height="580" as="geometry" />
+        </mxCell>
+
+        <!-- TIER 1 Pages -->
+        <mxCell id="page-t1-dashboard" value="&lt;&lt;Page&gt;&gt;&#xa;DashboardPage&#xa;────────&#xa;app/(dashboard)/page.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="80" y="2240" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="page-t1-transactions" value="&lt;&lt;Page&gt;&gt;&#xa;TransactionsPage&#xa;────────&#xa;app/transactions/page.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="300" y="2240" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="page-t1-add-trans" value="&lt;&lt;Component&gt;&gt;&#xa;AddTransactionDialog&#xa;────────&#xa;components/add-transaction.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="520" y="2240" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="page-t1-import" value="&lt;&lt;Component&gt;&gt;&#xa;ImportDialog&#xa;────────&#xa;components/import-dialog.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="760" y="2240" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="page-t1-cards" value="&lt;&lt;Page&gt;&gt;&#xa;CreditCardsPage&#xa;────────&#xa;app/cards/page.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="80" y="2340" width="160" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="page-t1-accounts" value="&lt;&lt;Page&gt;&gt;&#xa;BankAccountsPage&#xa;────────&#xa;app/accounts/page.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="280" y="2340" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="page-t1-goals" value="&lt;&lt;Page&gt;&gt;&#xa;GoalsPage&#xa;────────&#xa;app/goals/page.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="500" y="2340" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="page-t1-subscription" value="&lt;&lt;Page&gt;&gt;&#xa;SubscriptionPage&#xa;────────&#xa;app/subscription/page.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="680" y="2340" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="page-t1-ai-reports" value="&lt;&lt;Page&gt;&gt;&#xa;AIReportsPage&#xa;────────&#xa;app/reports/page.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="900" y="2340" width="160" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- TIER 2 Pages -->
+        <mxCell id="page-t2-family-dashboard" value="&lt;&lt;Page&gt;&gt; 🟩 TIER 2&#xa;FamilyDashboardPage&#xa;────────&#xa;app/family/page.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="80" y="2440" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="page-t2-members" value="&lt;&lt;Page&gt;&gt; 🟩 TIER 2&#xa;FamilyMembersPage&#xa;────────&#xa;app/family/members/page.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="300" y="2440" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="page-t2-allowance" value="&lt;&lt;Page&gt;&gt; 🟩 TIER 2&#xa;AllowanceManagementPage&#xa;────────&#xa;app/family/allowance/page.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="540" y="2440" width="220" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="page-t2-split" value="&lt;&lt;Page&gt;&gt; 🟩 TIER 2&#xa;ExpenseSplitPage&#xa;────────&#xa;app/family/split/page.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="800" y="2440" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="page-t2-chat" value="&lt;&lt;Page&gt;&gt; 🟩 TIER 2&#xa;FamilyChatPage&#xa;────────&#xa;app/family/chat/page.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="80" y="2540" width="170" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="page-t2-parental" value="&lt;&lt;Page&gt;&gt; 🟩 TIER 2&#xa;ParentalControlPage&#xa;────────&#xa;app/family/parental/page.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="290" y="2540" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- TIER 3 Pages -->
+        <mxCell id="page-t3-business-dashboard" value="&lt;&lt;Page&gt;&gt; 🟧 TIER 3&#xa;BusinessDashboardPage&#xa;────────&#xa;app/business/page.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="2240" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="page-t3-dre" value="&lt;&lt;Page&gt;&gt; 🟧 TIER 3&#xa;DREPage&#xa;────────&#xa;app/business/dre/page.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="2240" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="page-t3-costcenters" value="&lt;&lt;Page&gt;&gt; 🟧 TIER 3&#xa;CostCentersPage&#xa;────────&#xa;app/business/cost/page.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1580" y="2240" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="page-t3-clients" value="&lt;&lt;Page&gt;&gt; 🟧 TIER 3&#xa;ClientsPage&#xa;────────&#xa;app/business/clients/page.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1800" y="2240" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="page-t3-suppliers" value="&lt;&lt;Page&gt;&gt; 🟧 TIER 3&#xa;SuppliersPage&#xa;────────&#xa;app/business/suppliers/page.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="2040" y="2240" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="page-t3-invoices" value="&lt;&lt;Page&gt;&gt; 🟧 TIER 3&#xa;InvoicesPage&#xa;────────&#xa;app/business/invoices/page.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="2340" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="page-t3-tax" value="&lt;&lt;Page&gt;&gt; 🟧 TIER 3&#xa;TaxReportsPage&#xa;────────&#xa;app/business/tax/page.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="2340" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="page-t3-cashflow" value="&lt;&lt;Page&gt;&gt; 🟧 TIER 3&#xa;CashFlowPage&#xa;────────&#xa;app/business/cashflow/page.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1580" y="2340" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="page-t3-reconciliation" value="&lt;&lt;Page&gt;&gt; 🟧 TIER 3&#xa;ReconciliationPage&#xa;────────&#xa;app/business/reconcile/page.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1820" y="2340" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="page-t3-contracts" value="&lt;&lt;Page&gt;&gt; 🟧 TIER 3&#xa;ContractsPage&#xa;────────&#xa;app/business/contracts/page.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="2060" y="2340" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="page-t3-budget" value="&lt;&lt;Page&gt;&gt; 🟧 TIER 3&#xa;BudgetPage&#xa;────────&#xa;app/business/budget/page.tsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="2440" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Nota de Arquitetura -->
+        <mxCell id="arch-note" value="NOTA ARQUITETURAL:&#xa;&#xa;• Next.js 14 App Router com Server Components e Server Actions&#xa;• PostgreSQL 16 + Prisma ORM 6.19.0&#xa;• Autenticação: Clerk (@clerk/nextjs 5.7.5)&#xa;• Pagamentos: Stripe 17.3.1&#xa;• IA: OpenAI 6.6.15 (GPT-4o-mini)&#xa;• UI: shadcn/ui + Tailwind CSS + Radix UI&#xa;• Multi-tenant: Isolamento por userId (Clerk)&#xa;• Tiers controlados via metadata do Clerk + Stripe subscriptions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=9;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="1340" y="2440" width="920" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- Relacionamentos exemplo (apenas alguns para ilustrar) -->
+        <mxCell id="rel-page-service" value="" style="endArrow=open;html=1;dashed=1;dashPattern=1 2;startArrow=none;startFill=0;endFill=0;strokeWidth=1;" edge="1" parent="1" source="page-t1-dashboard" target="service-t1-dashboard">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="2200" as="sourcePoint" />
+            <mxPoint x="1050" y="1800" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="rel-service-repo" value="" style="endArrow=open;html=1;dashed=1;dashPattern=1 2;startArrow=none;startFill=0;endFill=0;strokeWidth=1;" edge="1" parent="1" source="service-t1-transaction" target="data-t1-transaction-repo">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="1600" as="sourcePoint" />
+            <mxPoint x="540" y="1260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="rel-repo-prisma" value="" style="endArrow=open;html=1;dashed=1;dashPattern=1 2;startArrow=none;startFill=0;endFill=0;strokeWidth=1;" edge="1" parent="1" source="data-t1-transaction-repo" target="data-t1-prisma">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="1210" as="sourcePoint" />
+            <mxPoint x="220" y="1300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="rel-service-external" value="" style="endArrow=open;html=1;dashed=1;dashPattern=1 2;startArrow=none;startFill=0;endFill=0;strokeWidth=1;" edge="1" parent="1" source="service-t1-subscription" target="external-stripe">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="220" y="1930" as="sourcePoint" />
+            <mxPoint x="560" y="2070" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

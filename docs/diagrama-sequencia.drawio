@@ -1,0 +1,597 @@
+<mxfile host="app.diagrams.net" agent="Claude Code" version="24.0.0">
+  <diagram name="Sequência - Fluxos Principais" id="sequence-main">
+    <mxGraphModel dx="2400" dy="1600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3200" pageHeight="4000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- TÍTULO -->
+        <mxCell id="title" value="Diagrama de Sequência - Monettis App&#xa;Fluxos Principais Organizados por Tiers" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="800" y="20" width="1200" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- LEGENDA -->
+        <mxCell id="legend-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="520" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" value="LEGENDA - TIERS E FASES" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="110" width="500" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-t1" value="🟦 TIER 1 - R$ 14,00/mês - Premium Individual" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="150" width="480" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-t2" value="🟩 TIER 2 - R$ 23,90/mês - Família Plus" style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="185" width="480" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-t3" value="🟧 TIER 3 - R$ 45,90/mês - Business Enterprise" style="text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="220" width="480" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-phases" value="Fase 1: Monólito Modular (Next.js) | Fase 2: Microsserviços" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="60" y="260" width="480" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ========== SEQUÊNCIA 1: LOGIN/AUTENTICAÇÃO ========== -->
+
+        <mxCell id="seq1-title" value="SEQUÊNCIA 1: Autenticação de Usuário (Tier 1, 2, 3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=middle;align=center;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="340" width="2800" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Atores/Participantes - Sequência 1 -->
+        <mxCell id="seq1-user" value="Usuário" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="80" y="400" width="100" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="seq1-frontend" value="Frontend&#xa;(Next.js)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="280" y="400" width="100" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="seq1-clerk" value="Clerk&#xa;(Auth)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="480" y="400" width="100" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="seq1-middleware" value="Middleware&#xa;(Auth Check)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="680" y="400" width="100" height="300" as="geometry" />
+        </mxCell>
+
+        <!-- Mensagens - Sequência 1 -->
+        <mxCell id="seq1-msg1" value="1. Acessa /login" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="460" as="sourcePoint" />
+            <mxPoint x="330" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq1-msg2" value="2. Renderiza SignIn (Clerk)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="490" as="sourcePoint" />
+            <mxPoint x="530" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq1-msg3" value="3. Insere credenciais" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="520" as="sourcePoint" />
+            <mxPoint x="530" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq1-msg4" value="4. Valida usuário + retorna session" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="560" as="sourcePoint" />
+            <mxPoint x="330" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq1-msg5" value="5. Redirect /" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="590" as="sourcePoint" />
+            <mxPoint x="730" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq1-msg6" value="6. Verifica auth() + tier metadata" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="620" as="sourcePoint" />
+            <mxPoint x="530" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq1-msg7" value="7. userId + tier info" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="650" as="sourcePoint" />
+            <mxPoint x="730" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq1-msg8" value="8. Exibe Dashboard" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="680" as="sourcePoint" />
+            <mxPoint x="130" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ========== SEQUÊNCIA 2: CRIAR TRANSAÇÃO ========== -->
+
+        <mxCell id="seq2-title" value="SEQUÊNCIA 2: Criar Transação (🟦 Tier 1, 2, 3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;align=center;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="740" width="2800" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Atores/Participantes - Sequência 2 -->
+        <mxCell id="seq2-user" value="Usuário" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="80" y="800" width="100" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="seq2-dialog" value="AddTransaction&#xa;Dialog" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="280" y="800" width="100" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="seq2-form" value="React&#xa;Hook Form" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="480" y="800" width="100" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="seq2-action" value="upsert&#xa;Transaction" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="680" y="800" width="100" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="seq2-zod" value="Zod&#xa;Schema" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="880" y="800" width="100" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="seq2-prisma" value="Prisma&#xa;ORM" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="800" width="100" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="seq2-db" value="PostgreSQL&#xa;(Neon)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="800" width="100" height="420" as="geometry" />
+        </mxCell>
+
+        <!-- Mensagens - Sequência 2 -->
+        <mxCell id="seq2-msg1" value="1. Clica 'Adicionar Transação'" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="870" as="sourcePoint" />
+            <mxPoint x="330" y="870" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2-msg2" value="2. Abre Dialog" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="900" as="sourcePoint" />
+            <mxPoint x="130" y="900" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2-msg3" value="3. Preenche form (nome, valor, tipo, categoria...)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="940" as="sourcePoint" />
+            <mxPoint x="530" y="940" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2-msg4" value="4. handleSubmit()" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="970" as="sourcePoint" />
+            <mxPoint x="730" y="970" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2-msg5" value="5. auth() verifica userId" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;strokeColor=#b85450;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="1000" as="sourcePoint" />
+            <mxPoint x="850" y="1000" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2-msg6" value="6. upsertTransactionSchema.parse(params)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="1030" as="sourcePoint" />
+            <mxPoint x="930" y="1030" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2-msg7" value="7. Validação OK" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="930" y="1060" as="sourcePoint" />
+            <mxPoint x="730" y="1060" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2-msg8" value="8. db.transaction.upsert({...})" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="1090" as="sourcePoint" />
+            <mxPoint x="1130" y="1090" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2-msg9" value="9. INSERT INTO transactions..." style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1130" y="1120" as="sourcePoint" />
+            <mxPoint x="1330" y="1120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2-msg10" value="10. Transaction created" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1330" y="1150" as="sourcePoint" />
+            <mxPoint x="1130" y="1150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2-msg11" value="11. revalidatePath('/transactions')" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="1180" as="sourcePoint" />
+            <mxPoint x="330" y="1180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2-msg12" value="12. toast.success('Transação criada!')" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="1200" as="sourcePoint" />
+            <mxPoint x="130" y="1200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ========== SEQUÊNCIA 3: GERAR RELATÓRIO IA ========== -->
+
+        <mxCell id="seq3-title" value="SEQUÊNCIA 3: Gerar Relatório com IA (🟦 Tier 1, 2, 3 - Premium)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;align=center;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1260" width="2800" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Atores/Participantes - Sequência 3 -->
+        <mxCell id="seq3-user" value="Usuário&#xa;Premium" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1320" width="100" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="seq3-button" value="AIReport&#xa;Button" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1320" width="100" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="seq3-action" value="generate&#xa;AiReport" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1320" width="100" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="seq3-data" value="get&#xa;Dashboard" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="680" y="1320" width="100" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="seq3-prisma" value="Prisma" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="880" y="1320" width="100" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="seq3-openai" value="OpenAI&#xa;API" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="1320" width="100" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="seq3-dialog" value="Report&#xa;Dialog" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="1320" width="100" height="400" as="geometry" />
+        </mxCell>
+
+        <!-- Mensagens - Sequência 3 -->
+        <mxCell id="seq3-msg1" value="1. Clica 'Gerar Relatório IA'" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="1400" as="sourcePoint" />
+            <mxPoint x="330" y="1400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq3-msg2" value="2. generateAiReport(month)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="1430" as="sourcePoint" />
+            <mxPoint x="530" y="1430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq3-msg3" value="3. Verifica hasPremiumPlan" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;strokeColor=#b85450;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="1460" as="sourcePoint" />
+            <mxPoint x="630" y="1460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq3-msg4" value="4. getDashboard(month)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="1500" as="sourcePoint" />
+            <mxPoint x="730" y="1500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq3-msg5" value="5. db.transaction.findMany(...)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="1530" as="sourcePoint" />
+            <mxPoint x="930" y="1530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq3-msg6" value="6. transactions[]" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="930" y="1560" as="sourcePoint" />
+            <mxPoint x="730" y="1560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq3-msg7" value="7. Retorna dashboardData" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="1590" as="sourcePoint" />
+            <mxPoint x="530" y="1590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq3-msg8" value="8. openai.chat.completions.create({model: 'gpt-4o-mini', ...})" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="1620" as="sourcePoint" />
+            <mxPoint x="1130" y="1620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq3-msg9" value="9. AI Response (Markdown report)" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1130" y="1660" as="sourcePoint" />
+            <mxPoint x="530" y="1660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq3-msg10" value="10. Abre Dialog com relatório" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="1690" as="sourcePoint" />
+            <mxPoint x="1330" y="1690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq3-msg11" value="11. Exibe relatório formatado (ReactMarkdown)" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1330" y="1710" as="sourcePoint" />
+            <mxPoint x="130" y="1710" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ========== SEQUÊNCIA 4: ASSINAR PLANO STRIPE ========== -->
+
+        <mxCell id="seq4-title" value="SEQUÊNCIA 4: Assinar Plano via Stripe (Tier 1, 2, 3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=middle;align=center;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1760" width="2800" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Atores/Participantes - Sequência 4 -->
+        <mxCell id="seq4-user" value="Usuário&#xa;Free" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1820" width="100" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="seq4-page" value="Subscription&#xa;Page" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1820" width="100" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="seq4-action" value="createStripe&#xa;Checkout" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1820" width="100" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="seq4-stripe" value="Stripe&#xa;API" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="680" y="1820" width="100" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="seq4-checkout" value="Stripe&#xa;Checkout" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="880" y="1820" width="100" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="seq4-webhook" value="Webhook&#xa;Handler" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="1820" width="100" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="seq4-clerk" value="Clerk&#xa;Metadata" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="1820" width="100" height="480" as="geometry" />
+        </mxCell>
+
+        <!-- Mensagens - Sequência 4 -->
+        <mxCell id="seq4-msg1" value="1. Clica 'Assinar Plano'" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="1900" as="sourcePoint" />
+            <mxPoint x="330" y="1900" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq4-msg2" value="2. createStripeCheckout()" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="1930" as="sourcePoint" />
+            <mxPoint x="530" y="1930" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq4-msg3" value="3. stripe.customers.create / find" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="1960" as="sourcePoint" />
+            <mxPoint x="730" y="1960" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq4-msg4" value="4. customerId" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="1990" as="sourcePoint" />
+            <mxPoint x="530" y="1990" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq4-msg5" value="5. stripe.checkout.sessions.create({priceId, success_url, ...})" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="2020" as="sourcePoint" />
+            <mxPoint x="730" y="2020" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq4-msg6" value="6. sessionId" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="2050" as="sourcePoint" />
+            <mxPoint x="530" y="2050" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq4-msg7" value="7. redirectToCheckout(sessionId)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="2080" as="sourcePoint" />
+            <mxPoint x="930" y="2080" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq4-msg8" value="8. Insere dados de pagamento" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="2110" as="sourcePoint" />
+            <mxPoint x="930" y="2110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq4-msg9" value="9. checkout.session.completed" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;strokeColor=#b85450;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="930" y="2150" as="sourcePoint" />
+            <mxPoint x="1130" y="2150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq4-msg10" value="10. constructEvent + validar signature" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1130" y="2180" as="sourcePoint" />
+            <mxPoint x="730" y="2180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq4-msg11" value="11. clerkClient.users.updateUserMetadata(tier: 'premium')" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1130" y="2220" as="sourcePoint" />
+            <mxPoint x="1330" y="2220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq4-msg12" value="12. Metadata updated" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1330" y="2250" as="sourcePoint" />
+            <mxPoint x="1130" y="2250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq4-msg13" value="13. Redirect success_url + Acesso Premium" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="930" y="2280" as="sourcePoint" />
+            <mxPoint x="130" y="2280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ========== SEQUÊNCIA 5: FAMÍLIA (TIER 2) ========== -->
+
+        <mxCell id="seq5-title" value="SEQUÊNCIA 5: Adicionar Membro à Família (🟩 Tier 2 - Futuro)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=middle;align=center;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="2340" width="2800" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Atores/Participantes - Sequência 5 -->
+        <mxCell id="seq5-admin" value="Titular&#xa;Família" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="80" y="2400" width="100" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="seq5-page" value="Family&#xa;Page" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="280" y="2400" width="100" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="seq5-service" value="Family&#xa;Service" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="480" y="2400" width="100" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="seq5-prisma" value="Prisma" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="680" y="2400" width="100" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="seq5-email" value="Email&#xa;Service" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="880" y="2400" width="100" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="seq5-member" value="Membro&#xa;Convidado" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="2400" width="100" height="380" as="geometry" />
+        </mxCell>
+
+        <!-- Mensagens - Sequência 5 -->
+        <mxCell id="seq5-msg1" value="1. Clica 'Convidar Membro'" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="2480" as="sourcePoint" />
+            <mxPoint x="330" y="2480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq5-msg2" value="2. inviteFamilyMember(email, role)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="2510" as="sourcePoint" />
+            <mxPoint x="530" y="2510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq5-msg3" value="3. Verifica limite de membros (tier)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="2540" as="sourcePoint" />
+            <mxPoint x="730" y="2540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq5-msg4" value="4. Cria convite com token" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="2580" as="sourcePoint" />
+            <mxPoint x="730" y="2580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq5-msg5" value="5. Envia email de convite" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="2620" as="sourcePoint" />
+            <mxPoint x="930" y="2620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq5-msg6" value="6. Recebe email + clica link" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="930" y="2660" as="sourcePoint" />
+            <mxPoint x="1130" y="2660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq5-msg7" value="7. acceptInvitation(token)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1130" y="2700" as="sourcePoint" />
+            <mxPoint x="530" y="2700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq5-msg8" value="8. Cria FamilyMember vinculado" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="2730" as="sourcePoint" />
+            <mxPoint x="730" y="2730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq5-msg9" value="9. Membro adicionado com sucesso" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="2760" as="sourcePoint" />
+            <mxPoint x="1130" y="2760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ========== SEQUÊNCIA 6: BUSINESS (TIER 3) ========== -->
+
+        <mxCell id="seq6-title" value="SEQUÊNCIA 6: Criar Perfil Empresarial e Emitir NF (🟧 Tier 3 - Futuro)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;verticalAlign=middle;align=center;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="2820" width="2800" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Atores/Participantes - Sequência 6 -->
+        <mxCell id="seq6-user" value="Usuário&#xa;Business" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="80" y="2880" width="100" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="seq6-page" value="Business&#xa;Page" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="280" y="2880" width="100" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="seq6-business-svc" value="Business&#xa;Service" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="480" y="2880" width="100" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="seq6-invoice-svc" value="Invoice&#xa;Service" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="680" y="2880" width="100" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="seq6-prisma" value="Prisma" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="880" y="2880" width="100" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="seq6-nfse" value="NFSe API&#xa;(Futuro)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="2880" width="100" height="400" as="geometry" />
+        </mxCell>
+
+        <!-- Mensagens - Sequência 6 -->
+        <mxCell id="seq6-msg1" value="1. Cadastra Perfil Empresarial (CNPJ, regime, etc)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="2960" as="sourcePoint" />
+            <mxPoint x="330" y="2960" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq6-msg2" value="2. createBusinessProfile(data)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="2990" as="sourcePoint" />
+            <mxPoint x="530" y="2990" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq6-msg3" value="3. Valida CNPJ + salva" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="3020" as="sourcePoint" />
+            <mxPoint x="930" y="3020" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq6-msg4" value="4. BusinessProfile criado" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="930" y="3050" as="sourcePoint" />
+            <mxPoint x="330" y="3050" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq6-msg5" value="5. Solicita emissão de NF" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="3100" as="sourcePoint" />
+            <mxPoint x="330" y="3100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq6-msg6" value="6. issueInvoice(data, businessId)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="3130" as="sourcePoint" />
+            <mxPoint x="730" y="3130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq6-msg7" value="7. Salva Invoice (pendente)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="3160" as="sourcePoint" />
+            <mxPoint x="930" y="3160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq6-msg8" value="8. Envia para API NFSe" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="3200" as="sourcePoint" />
+            <mxPoint x="1130" y="3200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq6-msg9" value="9. NFSe autorizada + número" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1130" y="3230" as="sourcePoint" />
+            <mxPoint x="730" y="3230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq6-msg10" value="10. Atualiza Invoice (status: autorizada)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="3260" as="sourcePoint" />
+            <mxPoint x="930" y="3260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq6-msg11" value="11. NF emitida com sucesso" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="3260" as="sourcePoint" />
+            <mxPoint x="130" y="3260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Nota -->
+        <mxCell id="notes" value="NOTAS:&#xa;&#xa;• Sequências 1-4: Implementadas (Fase 1 - Monólito Modular)&#xa;• Sequências 5-6: Planejadas (Tier 2 e Tier 3 - Futuro)&#xa;• Serviços externos (vermelho): Clerk, Stripe, OpenAI, APIs fiscais&#xa;• Server Actions: Comunicação cliente-servidor via Next.js 14&#xa;• Validação Zod em todas as actions&#xa;• Multi-tenant: Isolamento por userId (Clerk)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;verticalAlign=top;fontFamily=Courier New;fontSize=10;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="40" y="3320" width="800" height="140" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
