@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowDownUpIcon } from "lucide-react";
+import { ArrowDownUpIcon, Plus } from "lucide-react";
 import { Button } from "./ui/button";
 import { useState } from "react";
 import UpsertTransactionDialog from "./upsert-transaction-dialog";
@@ -13,12 +13,33 @@ import {
 
 interface AddTransactionButtonProps {
   userCanAddTransaction?: boolean;
+  variant?: "default" | "mobile";
 }
 
 const AddTransactionButton = ({
   userCanAddTransaction,
+  variant = "default",
 }: AddTransactionButtonProps) => {
   const [dialogIsOpen, setDialogIsOpen] = useState(false);
+
+  if (variant === "mobile") {
+    return (
+      <>
+        <Button
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg"
+          onClick={() => setDialogIsOpen(true)}
+          disabled={!userCanAddTransaction}
+          size="icon"
+        >
+          <Plus className="h-6 w-6" />
+        </Button>
+        <UpsertTransactionDialog
+          isOpen={dialogIsOpen}
+          setIsOpen={setDialogIsOpen}
+        />
+      </>
+    );
+  }
 
   return (
     <>

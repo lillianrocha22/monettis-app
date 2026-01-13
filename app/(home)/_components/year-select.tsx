@@ -34,7 +34,7 @@ const YearSelect = ({ availableYears }: YearSelectProps) => {
       onValueChange={(value) => handleYearChange(value)}
       defaultValue={year ?? ""}
     >
-      <SelectTrigger className="w-[120px] rounded-full">
+      <SelectTrigger className="h-9 w-[80px] rounded-full text-xs md:h-10 md:w-[120px] md:text-sm">
         <SelectValue placeholder="Ano" />
       </SelectTrigger>
       <SelectContent>

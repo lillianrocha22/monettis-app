@@ -4,6 +4,7 @@ import "./globals.css";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "./_components/theme-provider";
 import { ClerkThemeProvider } from "./_components/clerk-theme-provider";
+import { BottomNav } from "./_components/bottom-nav";
 
 const mulish = Mulish ({
   subsets: ["latin-ext"],
@@ -88,7 +89,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ClerkThemeProvider>
-            {children}
+            <div className="pb-16 lg:pb-0">
+              {children}
+            </div>
+            <BottomNav />
             <Toaster />
           </ClerkThemeProvider>
         </ThemeProvider>
