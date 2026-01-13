@@ -97,10 +97,10 @@ const Navbar = () => {
         <div className="hidden lg:block">
           <ThemeToggle />
         </div>
-        <UserButton showName={false} />
-        <span className="hidden text-sm md:inline">
+        {/* Esconde o nome no mobile via CSS */}
+        <div className="[&_.cl-userButtonOuterIdentifier]:hidden [&_.cl-userButtonOuterIdentifier]:lg:inline">
           <UserButton showName />
-        </span>
+        </div>
       </div>
     </nav>
   );
