@@ -38,7 +38,7 @@ const Navbar = () => {
             <SheetHeader>
               <SheetTitle>
                 <Image
-                  src="/logo.svg"
+                  src="/logo.png"
                   width={140}
                   height={32}
                   alt="Monettis"
@@ -66,7 +66,7 @@ const Navbar = () => {
           </SheetContent>
         </Sheet>
         <Image
-          src="/logo.svg"
+          src="/logo.png"
           width={120}
           height={28}
           alt="Monettis"
@@ -76,7 +76,7 @@ const Navbar = () => {
 
       {/* DESKTOP - ESQUERDA */}
       <div className="hidden items-center gap-10 lg:flex">
-        <Image src="/logo.svg" width={173} height={39} alt="Monettis" />
+        <Image src="/logo.png" width={173} height={39} alt="Monettis" />
         {NAV_LINKS.map((link) => (
           <Link
             key={link.href}
