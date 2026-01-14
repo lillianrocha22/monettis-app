@@ -28,6 +28,10 @@ interface BottomNavProps {
 export function BottomNav({ userCanAddTransaction }: BottomNavProps) {
   const pathname = usePathname();
 
+  if (pathname === "/login") {
+    return null;
+  }
+
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 border-t bg-background pb-safe lg:hidden">
       <div className="flex h-16 items-center justify-around">

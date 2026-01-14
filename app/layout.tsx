@@ -4,7 +4,7 @@ import "./globals.css";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "./_components/theme-provider";
 import { ClerkThemeProvider } from "./_components/clerk-theme-provider";
-import { BottomNav } from "./_components/bottom-nav";
+import { BottomNavWrapper } from "./_components/bottom-nav-wrapper";
 
 const mulish = Mulish ({
   subsets: ["latin-ext"],
@@ -92,7 +92,7 @@ export default function RootLayout({
             <div className="pb-16 lg:pb-0">
               {children}
             </div>
-            <BottomNav />
+            <BottomNavWrapper />
             <Toaster />
           </ClerkThemeProvider>
         </ThemeProvider>

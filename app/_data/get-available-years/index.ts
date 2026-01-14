@@ -16,11 +16,13 @@ export const getAvailableYears = async (): Promise<number[]> => {
   `;
 
   const years = result.map((r) => r.year);
+  const currentYear = new Date().getFullYear();
 
-  // Se não houver transações, retornar ano atual
-  if (years.length === 0) {
-    return [new Date().getFullYear()];
+  // Sempre incluir o ano atual na lista
+  if (!years.includes(currentYear)) {
+    years.push(currentYear);
   }
 
-  return years;
+  // Ordenar em ordem decrescente (ano mais recente primeiro)
+  return years.sort((a, b) => b - a);
 };

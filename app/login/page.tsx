@@ -12,17 +12,16 @@ const LoginPage = async() => {
     }
 
     return (
-        <div className="grid h-full grid-cols-2">
-            {/*esquerda*/}
-            <div className="mx-auto flex h-full max-w-[550px] flex-col justify-center p-8">
+        <div className="flex min-h-screen items-center justify-center">
+            <div className="flex max-w-[550px] flex-col items-center p-6 md:p-8 text-center">
                 <Image
                 src="/logo.png"
                 width={173}
                 height={39}
-                alt="Finance AI"
+                alt="Monettis"
                 className="mb-8"
                 />
-                <h1 className="mb-3 text-4xl font-bold">Bem-vindo</h1>
+                <h1 className="mb-3 text-3xl md:text-4xl font-bold">Bem-vindo</h1>
                 <p className="mb-8 text-muted-foreground">
                 O Monettis é uma plataforma de gestão financeira que utiliza IA para
                 monitorar suas movimentações, e oferecer insights personalizados,
@@ -34,12 +33,6 @@ const LoginPage = async() => {
                         Fazer login ou criar conta
                     </Button>
                 </SignInButton>
-                
-            </div>
-            
-            {/*direita*/}
-            <div className="relative h-full w-full">
-                <Image src="/login.png" alt="Faça login" fill className="object-cover"/>   
             </div>
         </div>
      );
