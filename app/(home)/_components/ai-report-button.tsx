@@ -11,9 +11,9 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/app/_components/ui/dialog";
-import { BotIcon, Loader2Icon } from "lucide-react";
+import { BotIcon, DownloadIcon, Loader2Icon } from "lucide-react";
 import { generateAiReport } from "../_actions/generate-ai-report";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ScrollArea } from "@/app/_components/ui/scroll-area";
 import Markdown from "react-markdown";
 import Link from "next/link";
@@ -27,6 +27,8 @@ interface AiReportButtonProps {
 const AiReportButton = ({ month, year, hasPremiumPlan }: AiReportButtonProps) => {
   const [report, setReport] = useState<string | null>(null);
   const [reportIsLoading, setReportIsLoading] = useState(false);
+  const reportRef = useRef<HTMLDivElement>(null);
+
   const handleGenerateReportClick = async () => {
     try {
       setReportIsLoading(true);
@@ -37,6 +39,33 @@ const AiReportButton = ({ month, year, hasPremiumPlan }: AiReportButtonProps) =>
     } finally {
       setReportIsLoading(false);
     }
+  };
+
+  const handleSavePDF = async () => {
+    if (!reportRef.current) return;
+    const html2pdf = (await import("html2pdf.js")).default;
+
+    // Criar clone com estilos para PDF (texto preto em fundo branco)
+    const clone = reportRef.current.cloneNode(true) as HTMLElement;
+    clone.style.color = "#000000";
+    clone.style.backgroundColor = "#ffffff";
+    clone.style.padding = "20px";
+
+    // Aplicar cor preta a todos os elementos filhos
+    clone.querySelectorAll("*").forEach((el) => {
+      (el as HTMLElement).style.color = "#000000";
+    });
+
+    await html2pdf()
+      .set({
+        margin: [10, 10, 20, 10], // [top, right, bottom, left]
+        filename: `relatorio-ia-${month}-${year}.pdf`,
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+      })
+      .from(clone)
+      .save();
   };
   return (
     <Dialog
@@ -63,12 +92,20 @@ const AiReportButton = ({ month, year, hasPremiumPlan }: AiReportButtonProps) =>
               </DialogDescription>
             </DialogHeader>
             <ScrollArea className="prose max-h-[450px] text-muted-foreground prose-h3:text-muted-foreground prose-h4:text-muted-foreground prose-strong:text-muted-foreground">
-              <Markdown>{report}</Markdown>
+              <div ref={reportRef}>
+                <Markdown>{report}</Markdown>
+              </div>
             </ScrollArea>
             <DialogFooter>
               <DialogClose asChild>
                 <Button variant="ghost">Cancelar</Button>
               </DialogClose>
+              {report && (
+                <Button variant="outline" onClick={handleSavePDF}>
+                  <DownloadIcon className="mr-2 h-4 w-4" />
+                  Salvar em PDF
+                </Button>
+              )}
               <Button
                 onClick={handleGenerateReportClick}
                 disabled={reportIsLoading}
